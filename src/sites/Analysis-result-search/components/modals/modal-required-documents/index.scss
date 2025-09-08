@@ -1,0 +1,63 @@
+.modal-documents {
+    &__head,
+    &__body {
+        background-color: #fff;
+    }
+    &__head {
+        border-radius: 10px 10px 0 0;
+        padding: 20px 20px 10px;
+        .n-title-aux {
+            font-size: 18px;
+        }
+    }
+    &__body {
+        border-radius: 0 0 10px 10px;
+        padding: 10px 20px 20px;
+        &_content {
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                row-gap: 18px;
+                li {
+                    position: relative;
+                    padding-left: 14px;
+                    display: flex;
+                    align-items: center;
+                    &::before {
+                        content: "";
+                        display: block !important;
+                        position: absolute !important;
+                        width: 6px !important;
+                        height: 6px !important;
+                        background-color: rgb(0, 171, 223) !important;
+                        left: 0 !important;
+                        border-radius: 50% !important;
+                        top: 8px;
+                    }
+                }
+            }
+            .modal-fixed__close {
+                position: initial !important;
+                display: block;
+                margin-top: 25px;
+                background-color: rgb(0, 171, 223);
+                border: none;
+                border-radius: 10px;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+                padding: 8px;
+                width: 100%;
+                &:hover {
+                    background-color: rgb(21, 195, 250);
+                }
+                span {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        margin: auto 20px;
+    }
+}

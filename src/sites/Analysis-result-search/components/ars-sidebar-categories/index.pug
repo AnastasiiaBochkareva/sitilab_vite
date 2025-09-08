@@ -1,0 +1,25 @@
+mixin Ars-sidebar-categories(param = {})
+    - const items = ['Популярные услуги', 'Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, nihil.', 'Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, nihil.', 'Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, nihil.', 'Lorem ipsum dolor sit amet.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, nihil.']
+    - const list = ['Lorem ipsum dolor sit', 'Lorem ipsum', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, ducimus?']
+    .ars-sidebar-categories(class=param.class)
+        .ars-sidebar-categories__head
+            button.ars-sidebar-categories__head-link Анализы по категориям
+                +Img({
+                    src: 'img/ars-right.svg',
+                    alt:'Анализы по категориям'
+                })
+        .ars-sidebar-categories__body
+            .ars-sidebar-categories__items
+                each el in items
+                    .ars-sidebar-categories__item
+                        .ars-sidebar-categories__item-head
+                            .ars-sidebar-categories__item-title=el
+                            +Img({
+                                src: 'img/ars-more.svg',
+                                alt:'Анализы по категориям'
+                            })
+                        .ars-sidebar-categories__item-body
+                            ul
+                                each li in list
+                                    li
+                                        a(href='/')=li

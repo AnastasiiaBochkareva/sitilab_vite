@@ -1,0 +1,45 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+// @use "@/sites/Analysis-result-search/variables" as var;
+
+// ========== SHADOWS ==========
+$box-shadow-light: 0 2px 6px rgba(62, 57, 46, 0.1);
+$box-shadow: 0 4px 10px rgba(62, 57, 46, 0.25);
+$text-shadow: 1px 1px 5px rgba(62, 57, 46, 0.3);
+$text-shadow-light: 1px 1px 4px rgba(62, 57, 46, 0.1);
+
+// ========== BORDERS ==========
+$border-radius: 20px;
+$border-radius-50: 50%;
+$border-light: 1px solid #d9cec3;
+$border-dark: 1px solid #3e392e;
+$gray-border: 1px solid color.$gray-border;
+
+// ========== SPACING ==========
+$indent5: 5px;
+$indent10: 10px;
+$indent20: 20px;
+$indent30: 30px;
+$indent40: 40px;
+$indent60: 60px;
+
+$padding-card: 20px;
+$padding-section: 60px;
+
+// ========== ZOOM ==========
+$zoom-transition-duration: 0.3s;
+$zoom-scale: 1.05;
+
+// ========== TYPOGRAPHY ==========
+$font-family-default: "Roboto", sans-serif;
+$font-family-heading: "Roboto_Condensed", sans-serif;
+
+$font-size-base: 16px;
+$font-size-heading: 32px;
+
+// ========== TRANSITIONS ==========
+$transition-default: all 0.3s ease-in-out;
+$transition-fast: all 0.2s ease;
+$transition-slow: all 0.5s ease;
+
+// ========== TRANSFORM ==========
+$translate-default: translate(-5px, -5px);

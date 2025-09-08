@@ -1,0 +1,145 @@
+extends /sites/Analysis-result-search/layouts/base.pug
+
+block variables
+    - const title = ''
+    - const description = ''
+
+block content
+    .cart-page.cart-page--empty
+        .cart-page__empty-message
+            .n-title-xl Ваша корзина пуста
+            .n-title-xs Пожалуйста, перейдите в
+                a(href='#').text-blue каталог Анализов
+                |или воспользуйтесь поиском если ищете что-то конкретное
+    .cart-page
+        .cart-page__wrapper
+            .cart-page__head
+                .n-d-flex-sm
+                    .n-title-sm Где буду сдавать
+                    .cart-page__radio
+                        +Btn-radio-full({
+                            radioId: 'place-10',
+                            name: 'place',
+                            label: 'В мед центре',
+                            labelClass: 'n-title-xs',
+                            checked: true
+                        })
+                        +Btn-radio-full({
+                            radioId: 'place-11',
+                            name: 'place',
+                            label: 'На дому',
+                            labelClass: 'n-title-xs'
+                        })
+                    a(href='#' class='n-btn') 
+                        span.n-title-xs Выберите медицинский центр
+                .n-title-xl Корзина
+                button.btn-reset
+                    span Очистить корзину 
+                    +Img({
+                        src: 'img/trash.svg',
+                        alt: 'clean cart'
+                    })
+
+            .cart-page__body
+
+
+                .n-cards-list.n-warning 
+                    .n-cards-list__top
+                        +Attention({
+                            isCartCardWarning: true,
+                            img: 'n-warning.svg'
+                        })
+                    .n-cards-list__body
+                        +Cart-card({
+                            code: 'код: 11-10-001',
+                            title: 'Общий анализ крови (CBC/Diff - 5 фракций лейкоцитов)',
+                            price: '1050 ₽',
+                            cartCardClean: true, 
+                            leadTime: true, 
+                            radioId: '1',
+                            radioIdTwo: '2',
+                            name: 'group1'
+                        })
+                        +Cart-card({
+                            code: 'код: 62-94-803',
+                            title: 'ДНК Chlamydia trachomatis, ЦК соскоб',
+                            price: '485 ₽',
+                            cartCardClean: true, 
+                            leadTime: true, 
+                            radioId: '3',
+                            radioIdTwo: '4',
+                            addClass: 'n-last-child',
+                            name: 'group2'
+                        })
+                        .n-d-flex-sm
+                            a(href='' class='n-btn-secondary') 
+                                span.n-title-xs Сдать все в медцентре
+                            a(href='' class='n-btn-gray')
+                                +Img({
+                                    src: 'img/trash.svg',
+                                    alt: 'delite'
+                                })
+                                span.n-title-xs Удалить эти анализы
+
+                .n-cards-list 
+                    .n-cards-list__body
+                        +Cart-card({
+                            code: 'код: 11-10-001',
+                            title: 'Общий анализ крови (CBC/Diff - 5 фракций лейкоцитов)',
+                            price: '1050 ₽',
+                            cartCardClean: true, 
+                            leadTime: true, 
+                            radioId: '5',
+                            radioIdTwo: '6',
+                            name: 'group3'
+                        })
+                        +Cart-card({
+                            code: 'код: 62-94-803',
+                            title: 'ДНК Chlamydia trachomatis, ЦК соскоб',
+                            price: '485 ₽',
+                            cartCardClean: true, 
+                            leadTime: true, 
+                            radioId: '7',
+                            radioIdTwo: '8',
+                            name: 'group4'
+                        })
+                        +Cart-card({
+                            code: 'код: 00-00-000',
+                            title: 'Взятие крови из вены',
+                            price: '230 ₽', 
+                            radioId: '9',
+                            radioIdTwo: '10',
+                            name: 'group5'
+                        })
+                        +Cart-card({
+                            code: 'код: 00-00-000',
+                            title: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis tenetur tempore quibusdam aliquid odio laudantium, mollitia labore recusandae aspernatur sunt culpa tempora nostrum rerum. Eaque a suscipit qui doloribus omnis porro dicta? Animi quam veritatis cupiditate. Ratione laborum explicabo omnis. Ad impedit molestias nisi sequi architecto iure pariatur enim numquam?',
+                            price: '999999 ₽',
+                            cartCardClean: true, 
+                            leadTime: true, 
+                            radioId: '11',
+                            radioIdTwo: '12',
+                            addClass: 'n-last-child',
+                            name: 'group6'
+                        })
+
+            +Cart-sidebar({
+                data: true
+            })
+
+            +Analysis-info({
+                title: 'Важная информация',
+                class: 'n-title-md'
+            })
+
+        //- .map-madal
+        //-     +Filter-result({
+        //-         btnClose: true,
+        //-         closeIcon: true,
+        //-         modal: true,
+        //-     })
+
+        //- +MyModal({id: 'modal-menu', mode: ''})
+        //-     +Menu-form({
+        //-         })
+        +Modal-map({id: 'modal-map', mode: ''})

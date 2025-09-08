@@ -1,0 +1,13 @@
+mixin Cart-sidebar(param={})
+    if(param.noWrapper)
+        +Cart-sidebar-content({
+            contentForTabs: true,
+            
+        })
+    else
+        .cart-order__wrapper
+            +Cart-sidebar-content({
+                slider: true,
+                
+                data: true
+            })

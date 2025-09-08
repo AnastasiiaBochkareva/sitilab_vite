@@ -1,0 +1,35 @@
+mixin Ars-content-card(param)
+    - const code = ['код: 11-10-001', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, reiciendis.']
+    each el, index in code
+        - const fullIndex = param.startIndex + param.globalIndex + index
+        .ars-content-card(class=param.class)
+            .ars-content-card__left
+                .ars-content-card__left-head
+                    if(!param.isSimpleCard)
+                        a(href='/').ars-content-card__code=el
+                        button.ars-content-card__notice.text-blue Дешевле в составе чекапа
+                    else 
+                        if(index === 0)
+                            a(href='/').ars-content-card__code
+                                span Новость
+                                | #{el}
+                        else 
+                            button.ars-content-card__notice.text-blue <span>Акция</span>с 23.07.2024 по 30.09.2024
+                    if(param.sale)
+                        .ars-content-card__sale 
+                            +Img({
+                                src: 'img/ars-sale.svg',
+                                alt: 'sale'
+                            })
+                            span Акция
+                .ars-content-card__left-body
+                    a(href='/').ars-content-card__left-title Общий анализ крови (CBC/Diff - 5 фракций лейкоцитов)
+                    .ars-content-card__left-subtitle Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi mollitia? Quo numquam dolorum dolor ipsa, ratione quia aperiam blanditiis animi explicabo eligendi, facilis assumenda soluta quas? Obcaecati totam aut alias? Iure placeat et cumque voluptatem asperiores accusamus blanditiis natus obcaecati explicabo, magnam similique nemo eum, molestiae commodi aperiam delectus?
+                    if(!param.isSimpleCard)
+                        +Ars-tags()
+            if(!param.isSimpleCard)
+                +Ars-content-card-right({
+                    radioId: fullIndex
+                })
+
+

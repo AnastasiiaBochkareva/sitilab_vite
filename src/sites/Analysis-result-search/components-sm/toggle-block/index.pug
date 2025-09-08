@@ -1,0 +1,14 @@
+mixin Toggle-block(param={})
+    .n-toggle-block
+        if(param.ifImg)
+            +Img({ src: `img/${param.img}`, alt: 'icon' })
+        if(param.ifText)
+            p(class=param.textClass)=param.text
+            if(!param.noTextHover)
+                p.n-toggle-block__hover Опытные врачи помогут грамотно интерпретировать результаты анализов. Услуга бесплатная для всех клиентов Ситилаб.
+        if(param.ifToggle)
+            label.n-toggle
+                input.n-toggle__input(type="checkbox")
+                span.n-toggle__custom
+                if(param.label)
+                    span.n-toggle__label

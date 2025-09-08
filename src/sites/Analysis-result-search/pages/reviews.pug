@@ -1,0 +1,87 @@
+extends /sites/Analysis-result-search/layouts/base.pug
+
+block variables
+    - const title = ''
+    - const description = ''
+
+block content
+    .reviews-block 
+        .form__wrapper
+            form.form
+                .n-title-xl Выберите доступный медцентр в городе Москве
+                .address
+                    .address__input_wrapper(data-open="false")
+                        .address__input
+                            .form__input
+                                label(for="choosing-address") Медцентр<span>*</span>
+                                input(type="text" name='choosing-address' id='choosing-address' readonly placeholder="Выберите медицинский центр")
+                            button.address__toggle(type="button")
+                                +Img({
+                                    src: 'img/chevron-down.svg',
+                                    alt: 'List',
+                                    class: 'list-array'
+                                })
+                                +Img({
+                                    src: 'img/chevron-close.svg',
+                                    alt: 'Close',
+                                    class: 'list-close'
+                                })
+                    ul.address__list
+                        li.n-title-xs(data-address="Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iste cum laboriosam laudantium esse enim in, officia incidunt iusto nihil.") Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iste cum laboriosam laudantium esse enim in, officia incidunt iusto nihil.
+                        each el in Array(19)
+                            li.n-title-xs(data-address="ул. Ленина, 1") ул. Ленина, 1
+                        
+                .rating.active
+                    input(type="hidden" name="rating" id="rating-input" value=0)
+                    each el, i in Array(5)
+                        .star(data-value=(i + 1))
+                            svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48.713867" height="46.525391" viewBox="0 0 48.7139 46.5254" fill="none")
+                                path(id="Star 1" d="M22.56 1.1L16.56 13.19C16.26 13.78 15.7 14.19 15.06 14.28L1.7 16.26C0.07 16.5 -0.58 18.51 0.6 19.66L10.24 29.11C10.71 29.57 10.92 30.23 10.81 30.87L8.56 44.18C8.29 45.81 10 47.05 11.46 46.29L23.43 40.04C24.01 39.74 24.7 39.74 25.28 40.04L37.24 46.29C38.71 47.05 40.41 45.81 40.14 44.18L37.89 30.87C37.79 30.23 38 29.57 38.47 29.11L48.11 19.66C49.29 18.51 48.63 16.5 47 16.26L33.65 14.28C33 14.19 32.44 13.78 32.15 13.19L26.14 1.1C25.41 -0.38 23.3 -0.38 22.56 1.1Z" fill="#eee" fill-opacity="1.000000" fill-rule="evenodd")
+                .form__inputs.active
+                    .form__input 
+                        label(for="reviews-username") Имя<span>*</span>
+                        input(type="text" name="reviews-username" id='reviews-username' placeholder="Введите имя")
+
+                    .form__input 
+                        label(for="reviews-phone") Телефон<span>*</span>
+                        input(type="tel" name="reviews-phone" id='reviews-phone' placeholder="Введите телефон")
+
+                    .form__input 
+                        label(for="reviews-email") Email<span>*</span>
+                        input(type="email" name="reviews-email" id='reviews-email' placeholder="Введите вашу почту")
+
+                    .form__input 
+                        label(for="reviews-message") Отзыв<span>*</span>
+                        textarea(name="reviews-message" id='reviews-message' placeholder="Введите текст отзыва" rows=7)
+
+                    +Ars-sidebar-sheckboxes({
+                        noTitle: true,
+                        checkboxes: [
+                            { text: 'Даю согласие на обработку персональных данных', linkText: 'персональных данных', linkHref: '#' },
+                        ]
+                    })
+
+                button.n-btn(type="button" disabled) 
+                    span.n-title-xs  Продолжить
+        .form__wrapper.form__wrapper--submitted.form__wrapper--negative
+            div
+                .n-title-xl Благодарим за отзыв!
+                p.n-title-lg Мы сожалеем, что посещение лаборатории доставило Вам неудобства. Ваше обращение было отправлено в Департамент контроля качества. Мы проведем проверку и свяжемся с Вами, чтобы сообщить о её результатах. 
+                p.n-title-lg С уважением, СИТИЛАБ.
+        .form__wrapper.form__wrapper--submitted.form__wrapper--positive
+            div
+                .n-title-xl Спасибо за хорошую оценку!
+                p.n-title-lg Оставьте пожалуйста отзыв о посещении, это поможет нам стать лучше!
+                .form__links
+                    a(href='#')
+                        +Img({
+                            src: 'img/2gis.png',
+                            alt: '2gis'
+                        })
+                        |2ГИС
+                    a(href='#')
+                        +Img({
+                            src: 'img/yandex.png',
+                            alt: 'yandex'
+                        })
+                        |Яндекс Карты

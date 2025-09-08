@@ -1,0 +1,21 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+.ars-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    .ars-tag {
+        color: color.$gray-text;
+        background-color: rgb(243, 246, 249);
+        border: 1px solid rgb(243, 246, 249);
+        border-radius: 5px;
+        max-width: max-content;
+        padding: 0 10px;
+        text-decoration: none;
+        transition: border 0.3s ease;
+        &:hover {
+            background-color: color.$blue-back;
+            border: 1px solid color.$blue;
+            color: color.$blue;
+        }
+    }
+}

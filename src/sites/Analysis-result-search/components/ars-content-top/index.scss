@@ -1,0 +1,127 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+.ars-content-top {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 24px;
+    position: relative;
+    &__link {
+        text-decoration: none;
+    }
+    @media (max-width: 768px) {
+        gap: 20px;
+        &__link,
+        &__title {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+.ars-content-tabs {
+    &__nav {
+        border: 1px solid color.$gray-border;
+        border-radius: 6px 6px 0 0;
+        padding: 3px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        width: 100%;
+        max-width: max-content;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        ul {
+            display: flex;
+            gap: 5px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                cursor: pointer;
+                padding: 0 !important;
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 24px;
+                    text-decoration: none;
+                    color: color.$dark-blue;
+                    padding: 2px 12px;
+                    transition: background-color 0.3s ease;
+                    border-radius: 6px;
+                    text-align: center;
+
+                    &:hover {
+                        background-color: #f0f0f0;
+                    }
+                    span {
+                        color: color.$gray-text;
+                    }
+                    &.active {
+                        background-color: color.$blue;
+                        color: #fff;
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+                &::before {
+                    content: none !important;
+                }
+            }
+        }
+    }
+
+    &__content {
+        .ars-content-tabs__tab {
+            display: none;
+        }
+
+        .ars-content-tabs__tab.active {
+            display: block;
+        }
+    }
+    @media (max-width: 768px) {
+        &__nav:not(.ars-content-tabs__nav-sm) {
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+            max-width: 100%;
+
+            ul {
+                justify-content: space-around;
+            }
+        }
+        .ars-content-tabs__nav-sm {
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 8px;
+            border: 1px solid color.$gray-border;
+            max-width: calc(100% - 40px);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            ul {
+                max-width: max-content;
+                justify-content: center;
+                width: 100%;
+                max-width: 100%;
+                flex-wrap: wrap;
+                li {
+                    min-width: 100px;
+                    width: 100%;
+                    max-width: calc(50% - 3px);
+                }
+            }
+        }
+    }
+}

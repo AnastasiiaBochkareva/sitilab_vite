@@ -1,0 +1,16 @@
+mixin Progress-bar(param={})
+    if(param.cartProgress)  
+        .cart-order__progress
+            .cart-order__progress_wrapper
+                .progress-bar__discount
+                    .progress-bar__discount_one.active 5%
+                    .progress-bar__discount_two 10%
+                    .progress-bar__discount_three 12%
+                    .progress-bar__discount_max 16%
+
+                .progress-bar
+                .progress-bar__fill(style='width: 25.36%;')
+                
+
+            if(param.text)
+                .n-title-xs-alt=param.text

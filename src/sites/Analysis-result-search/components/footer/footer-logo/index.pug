@@ -1,0 +1,13 @@
+mixin Footer-logo(param={})
+    
+        a(href='#').footer__logo
+            +Img({
+                src: 'img/medmagroup.png',
+                alt: 'medmagroup',
+                class: 'show-on-desktop'
+            })
+            +Img({
+                src: 'img/medmagroup-sm.png',
+                alt: 'medmagroup',
+                class: 'show-on-mobile'
+            })

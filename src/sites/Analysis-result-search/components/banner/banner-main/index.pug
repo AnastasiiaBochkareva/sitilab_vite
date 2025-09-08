@@ -1,0 +1,22 @@
+mixin Main-banner(param={})
+    .main-banner
+        .container
+            .main-banner__slider
+                .swiper-wrapper 
+                    each slide in param.slides
+                        .swiper-slide
+                            .main-banner__slide
+                                .main-banner__content
+                                    .main-banner__title=slide.title 
+                                    .main-banner__subtitle=slide.subtitle 
+                                    a(href="#" class='main-banner__btn')=slide.btn 
+                                .main-banner__img(class=slide.addImgClass)
+                                    if(slide.isImg)
+                                        +Img({
+                                            src: `img/${slide.img}.png`,
+                                            alt: 'slider img'
+                                        })
+                .slider-controls
+                    +Slider-navigation({
+                        mainBanner: true
+                    })

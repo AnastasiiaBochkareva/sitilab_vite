@@ -1,0 +1,32 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+.ars-sidebar-popular {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 13px !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        li {
+            display: flex;
+            align-items: center !important;
+            column-gap: 10px !important;
+            row-gap: 5px !important;
+            justify-content: space-between !important;
+            padding: 0 !important;
+            &::before {
+                content: none !important;
+            }
+            span {
+                color: color.$gray-text;
+            }
+        }
+    }
+    &__link {
+        color: color.$dark-blue;
+        text-decoration: none;
+    }
+}

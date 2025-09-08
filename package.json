@@ -1,0 +1,25 @@
+{
+  "name": "vite-pug-scss",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Anastasiya Bochkareva",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "sass": "^1.83.4",
+    "swiper": "^11.2.6",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.9",
+    "pug": "^3.0.3",
+    "vite-plugin-pug": "^0.4.1"
+  }
+}

@@ -1,0 +1,102 @@
+extends /sites/Analysis-result-search/layouts/base.pug
+
+block variables
+    - const title = ''
+    - const description = ''
+
+block content
+    .order-page.n-page
+        .n-page__head
+            .n-title-xl Оформление заказа
+
+        .n-page__body
+            .n-col
+                div.n-btns-auth 
+                    a(href='#').n-btn 
+                        span Без регистрации
+                    a(href='#')
+                        span Авторизоваться
+                div.n-tabs-wrapper
+                    .ars-content-tabs
+                        .ars-content-tabs__nav
+                            ul
+                                li
+                                    a(href="#order-tab1") 1
+                                li
+                                    a(href="#order-tab2") 2
+                                li
+                                    a(href="#order-tab3") 
+                                        svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.914062" height="13.121094" viewBox="0 0 19.9141 13.1211" fill="none")
+                                            path(id="Vector 248" d="M0.7 4.2L8.2 11.7L19.2 0.7" stroke="#8E9AAB" stroke-opacity="1.000000" stroke-width="2.000000")
+                .ars-content-body
+                    .ars-content-tabs__content
+                        #order-tab1.order-tab-one.ars-content-tabs__tab
+                            div.n-inputs__wrapper
+                                input.n-form__input(type="text" name="name" placeholder='+7 (___) ___-__-__ * ' required="")
+                                input.n-form__input(type="email" name="email" placeholder='E-mail *' required="")
+                            a(href='#').n-btn 
+                                span.n-title-xs Далее
+                            +Ars-sidebar-sheckboxes({
+                                noTitle: true,
+                                checkboxes: [
+                                    'Согласие на отправку результатов по sms',
+                                    { text: 'Даю согласие на обработку персональных данных', linkText: 'персональных данных', linkHref: '#' }, 
+                                    { text: 'Ознакомлен и выражаю безоговорочное согласие с условиями ', linkText: 'публичной оферты на оказание медицинских услуг', linkHref: '#' }, 
+                                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, id perspiciatis commodi fugiat placeat quaerat dicta natus odit tempore provident! Corrupti nam earum tempora est. Ab optio culpa unde dolore?',
+                                ],
+                                warning: true
+                            })
+
+                        #order-tab2.order-tab-two.ars-content-tabs__tab
+                            div.n-border-right
+                                .n-title-aux Способ оплаты
+                                +Order-tab-two-slider({
+                                    items: [
+                                        {
+                                            img: true,
+                                            imgSrc: 'sbp.png',
+                                            alt: 'Система быстрых платежей',
+                                            text: 'Система быстрых платежей',
+                                            textClass: 'scroll-text',
+                                            activeClass: 'active'
+                                        },
+                                        {
+                                            img: true,
+                                            imgSrc: 'credit-card.png',
+                                            alt: 'Картой онлайн',
+                                            text: 'Картой онлайн',
+                                            textClass: 'scroll-text'
+                                        },
+                                        {
+                                            img: true,
+                                            imgSrc: 'building.png',
+                                            alt: 'В медицинском центре',
+                                            text: 'В медицинском центре',
+                                            textClass: 'scroll-text'
+                                        },
+                                    ]
+                                })
+                            +Bonus-block({
+
+                            })
+
+                        #order-tab3.order-tab-three.ars-content-tabs__tab
+                            .order-tab-three__switch
+                                +Img({
+                                    src: 'img/success.svg',
+                                    alt: 'Оплата прошла успешно'
+                                })
+                                +Img({
+                                    src: 'img/alert.svg',
+                                    alt: 'Заказ ожидает оплаты',
+                                    class: 'active'
+                                })
+                            .n-title-aux Оплата прошла успешно
+                            .n-title-xs.n-custom Номер заказа: <span>№123456</span>
+                            .n-title-xs Для оказания услуг необходимо посетить медицинский центр по адресу:
+                            .n-title-sm Москва, Хорошёвское шоссе, 90
+
+            +Cart-sidebar({
+                noWrapper: true,
+            })
+        +Modal-required-documents()

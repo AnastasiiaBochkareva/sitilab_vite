@@ -1,0 +1,149 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+@use "@/sites/Analysis-result-search/variables" as var;
+
+.cart-card {
+    display: grid;
+    grid-template-columns: 49% 21.6% 1fr 1.9%;
+    // column-gap: 5.56%;
+    column-gap: 4%;
+    row-gap: 15px;
+    grid-template-areas: "title leadtime price clean";
+
+    &:not(.n-last-child) {
+        border-bottom: var.$gray-border;
+        padding-bottom: 20px;
+    }
+    &:not(:first-child) {
+        padding-top: 25px;
+    }
+
+    &__title {
+        grid-area: title;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        .n-title-lg {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 8;
+            overflow: hidden;
+        }
+    }
+    &__leadtime {
+        grid-area: leadtime;
+
+        .n-btn-radio {
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+            label {
+                gap: 0;
+            }
+        }
+    }
+    &__tooltip {
+        margin-bottom: 10px;
+        gap: 10px;
+
+        .tooltip-info {
+            width: 18px;
+            height: 18px;
+
+            img {
+                width: 18px;
+                height: 18px;
+            }
+
+            &::before {
+                width: 13px;
+                height: 13px;
+                transform: translate(-50%, -50%) rotate(45deg);
+                top: -16px;
+                left: 50%;
+            }
+
+            &__hover {
+                bottom: 30px;
+                left: 50%;
+                padding: 15px;
+                border-radius: 10px;
+                min-width: 240px;
+                width: 100%;
+                max-width: 300px;
+                height: max-content;
+            }
+            @media (max-width: 1440px) {
+                &__hover {
+                    // right: -10px;
+                    transform: translateX(-50%);
+                    padding: 10px;
+                }
+
+                &::before {
+                    // transform: translateX(-50%);
+                }
+            }
+        }
+    }
+    &__price {
+        grid-area: price;
+
+        .n-title-sm {
+            margin-bottom: 14px;
+        }
+    }
+    &__clean {
+        grid-area: clean;
+        width: auto;
+        height: 17px;
+        &-trash {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        padding-bottom: 15px;
+        grid-template-columns: 65.7% 1fr 6%;
+        grid-template-areas:
+            "title price clean"
+            "leadtime leadtime leadtime";
+        column-gap: 3%;
+        &:not(:first-child) {
+            padding-top: 15px;
+        }
+        &:not(.n-last-child) {
+            padding-bottom: 15px;
+        }
+
+        &__title {
+            flex-direction: column-reverse;
+            gap: 8px;
+        }
+
+        &__clean {
+            &-trash {
+                display: block;
+            }
+            &-ars-close {
+                display: none;
+            }
+        }
+        &__price {
+            .n-title-sm {
+                display: none;
+            }
+            .n-title-lg {
+                font-size: 18px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    @media (max-width: 360px) {
+        grid-template-areas:
+            "title clean"
+            "price price"
+            "leadtime leadtime";
+        grid-template-columns: 1fr 20px;
+    }
+}

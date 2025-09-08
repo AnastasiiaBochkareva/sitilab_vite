@@ -1,0 +1,99 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+.ars-categories-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: #fff;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    &.active {
+        display: block;
+    }
+    &__header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(243, 246, 249);
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 5px;
+        column-gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 20px;
+        z-index: 9999;
+    }
+    &__close {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        img {
+            width: 12px;
+            height: 12px;
+        }
+    }
+    &__content {
+        height: 100%;
+        padding-top: 50px;
+    }
+    .ars-sidebar-categories {
+        &__items {
+            max-height: 100%;
+            width: 100%;
+        }
+    }
+    &__body {
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 9999;
+        padding: 10px 20px 30px;
+        box-shadow: 0 -2px 20px 0 rgba(235, 241, 251, 1);
+    }
+    &__confirm {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 35px;
+        color: #fff;
+        background-color: color.$blue;
+        transition: background-color 0.3s ease;
+        padding: 5px 34px;
+        border-radius: 8px;
+        max-width: 335px;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+            background-color: color.$blue-hover;
+        }
+    }
+    @media (max-width: 768px) {
+        &__categories {
+            .ars-sidebar-categories__head {
+                display: none;
+            }
+            .ars-sidebar-categories__body {
+                display: flex;
+                border-right: none;
+                border-left: none;
+                border-radius: 0;
+            }
+        }
+    }
+}

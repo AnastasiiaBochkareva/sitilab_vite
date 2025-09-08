@@ -1,0 +1,13 @@
+mixin Cards-links(param={})
+    if(param.mainCardsLinks)
+        .n-inner-container
+            .card-links
+                each card in param.cardLinks
+                    a(href='#').card-link
+                        .img-container
+                            +Img({
+                                src: `img/cards-links-${card.img}.png`,
+                                alt: 'img',
+                                class: `card-link__img--${card.mod}`
+                            })
+                        p=card.text

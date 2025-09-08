@@ -1,0 +1,58 @@
+.footer-new {
+    .footer {
+        &__social {
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 222px;
+            height: 100%;
+            &_title {
+                color: rgba(177, 178, 180, 1);
+                font-family: "Montserrat", sans-serif;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 35px;
+                letter-spacing: 0%;
+                text-align: left;
+                display: none;
+            }
+            &_categories {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                justify-content: center;
+                width: 100%;
+                img {
+                    width: 30px;
+                    height: auto;
+                }
+                a {
+                    width: max-content;
+                    height: max-content;
+                    display: block;
+                    svg {
+                        path {
+                            transition: all 0.3s ease;
+                        }
+                    }
+                    &:hover {
+                        svg {
+                            path {
+                                fill: rgb(255, 255, 255);
+                            }
+                        }
+                    }
+                }
+            }
+            @media (min-width: 1221px) {
+                &_title {
+                    display: block;
+                }
+            }
+        }
+    }
+}

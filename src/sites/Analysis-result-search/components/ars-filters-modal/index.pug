@@ -1,0 +1,17 @@
+mixin Ars-filters-modal()
+    .ars-filters-modal(id='filters')
+        .ars-filters-modal__header
+            a(href='/').ars-filters-modal__clean Сбросить все
+            .ars-sidebar__title Фильтры
+            button.ars-filters-modal__close
+                +Img({
+                    src: 'img/ars-close.svg',
+                    alt: 'Close Filters'
+                })
+        
+        .ars-filters-modal__content
+            +Ars-sidebar({
+                class: 'ars-sidebar__checkboxes-modal'
+            })
+        .ars-filters-modal__footer
+            a(href='/').ars-filters-modal__confirm Применить

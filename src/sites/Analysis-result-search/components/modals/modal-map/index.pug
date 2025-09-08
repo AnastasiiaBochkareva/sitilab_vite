@@ -1,0 +1,26 @@
+mixin Modal-map(param={})
+    .modal-fixed(id='modal-map')
+        .modal-map
+            .modal-map__head
+                button.modal-fixed__close(data-close-modal)
+                    svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14.007812" height="14.007812" viewBox="0 0 14.0078 14.0078" fill="none")
+                        path(id="Vector 42" d="M0.32 1.71L0.29 1.71C-0.1 1.31 -0.1 0.69 0.29 0.29C0.69 -0.1 1.31 -0.1 1.71 0.29L1.71 0.32L0.32 1.71ZM13.68 12.29L13.71 12.29C14.1 12.69 14.1 13.31 13.71 13.71C13.31 14.1 12.69 14.1 12.29 13.71L12.29 13.68L13.68 12.29Z" fill="#fff" fill-opacity="1.000000" fill-rule="nonzero")
+                        path(id="Vector 42" d="M1 1L13 13" stroke="#fff" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round")
+                        path(id="Vector 43" d="M12.29 0.32L12.29 0.29C12.69 -0.1 13.31 -0.1 13.71 0.29C14.1 0.69 14.1 1.31 13.71 1.71L13.68 1.71L12.29 0.32ZM1.71 13.68L1.71 13.71C1.31 14.1 0.69 14.1 0.29 13.71C-0.1 13.31 -0.1 12.69 0.29 12.29L0.32 12.29L1.71 13.68Z" fill="#fff" fill-opacity="1.000000" fill-rule="nonzero")
+                        path(id="Vector 43" d="M13 1L1 13" stroke="#fff" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round")
+                .modal-map__content
+                    .n-title-md-alt Выбор медицинского центра
+                    .modal-map__content-input
+                        input(class='' type='text' name='adress' id='modal-input-adress' placeholder='Введите адрес'  required='required')
+                    a.modal-map__content-filters
+                        span.n-title-xs Фильтры
+                        +Img({
+                        src: 'img/ars-filter.svg',
+                        alt: 'filters'
+                        })
+            .modal-map__body
+                .modal-map__body_content
+                    +Main-map({
+                        noTop: true,
+                        noResultSearch: true
+                    })

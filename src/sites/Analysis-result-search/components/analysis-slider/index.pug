@@ -1,0 +1,38 @@
+mixin Analysis-slider(param={})
+    .a-title=param.sliderTitle 
+    .a-sale__cards
+        +Slider-navigation()
+        .a-sale__slider
+            .swiper-wrapper 
+                .swiper-slide
+                    +Analysis-card({
+                    codeSubtitle: 'код: 11-10-001',
+                    titleSm: 'Общий анализ крови (CBC/Diff - 5 фракций лейкоцитов)',
+                    typeSubtitle: 'Биоматериал: венозная кровь',
+                    vndSubtitle: 'доступно с выездом на дом',
+                    price: '525 ₽',
+                    })
+                .swiper-slide
+                    +Analysis-card({
+                    codeSubtitle: 'код: 23-12-001',
+                    titleSm: 'Глюкоза',
+                    typeSubtitle: 'Биоматериал: плазма крови',
+                    vndSubtitle: 'доступно с выездом на дом',
+                    price: '350 ₽',
+                    })
+                .swiper-slide
+                    +Analysis-card({
+                    codeSubtitle: 'код: 23-12-001',
+                    titleSm: 'Глюкоза',
+                    typeSubtitle: 'Биоматериал: плазма крови',
+                    vndSubtitle: 'доступно с выездом на дом',
+                    price: '350 ₽',
+                    })
+                .swiper-slide
+                    +Analysis-card({
+                    codeSubtitle: 'код: 23-12-001',
+                    titleSm: 'Глюкоза',
+                    typeSubtitle: 'Биоматериал: плазма крови',
+                    vndSubtitle: 'доступно с выездом на дом',
+                    price: '350 ₽',
+                    })

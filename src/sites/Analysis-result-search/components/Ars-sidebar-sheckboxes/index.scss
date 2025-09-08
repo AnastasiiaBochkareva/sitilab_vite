@@ -1,0 +1,82 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+
+.ars-sidebar {
+    &__checkboxes {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    @media (max-width: 768px) {
+        &__checkboxes {
+            gap: 10px;
+            &:not(:last-child) {
+                // border-bottom: 1px solid color.$gray-light;
+            }
+        }
+    }
+}
+.ars-checkboxes {
+    &__title {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        span {
+            background-color: color.$blue-back;
+            border-radius: 5px;
+            color: color.$blue;
+            text-align: center;
+            padding: 1px 6px 2px 6px;
+            min-height: 22px;
+            min-width: 22px;
+        }
+    }
+}
+.ars-checkbox {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    position: relative;
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &__custom {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        min-height: 24px;
+        border: 1px solid color.$gray-border;
+        border-radius: 5px;
+        margin-right: 10px;
+        transition: all 0.2s ease;
+        background-color: #fff;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 8px;
+            width: 6px;
+            height: 10px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+    }
+
+    &__input:checked + &__custom {
+        background-color: color.$blue;
+        border-color: color.$blue;
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}

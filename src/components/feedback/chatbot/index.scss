@@ -1,0 +1,59 @@
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    &-icon {
+        background-color: #00ff00;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        animation: flip 5s infinite;
+    }
+    &-icon.fixed {
+        animation: none;
+        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00,
+            0 0 20px #00ff00;
+    }
+    &-window {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 250px;
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+        border-radius: 8px;
+        color: #333;
+
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 18px;
+            border-bottom: 1px solid #333;
+        }
+
+        .chatbot-body {
+            margin-top: 10px;
+            a {
+                color: #000;
+            }
+        }
+
+        .chatbot-link {
+            display: block;
+            margin: 10px 0;
+            width: max-content;
+        }
+    }
+    &:hover {
+        .chatbot-icon {
+            animation: none;
+            box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00,
+                0 0 20px #00ff00;
+        }
+    }
+}

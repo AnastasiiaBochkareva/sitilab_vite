@@ -1,0 +1,103 @@
+.modal-cheaper {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 9999;
+    max-width: 760px;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: "Montserrt", sans-serif;
+    max-height: calc(100% - 40px);
+    p {
+        margin: 0 !important;
+    }
+    &__head {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        position: relative;
+        background-color: rgb(230, 248, 253);
+        padding: 30px 30px 20px;
+        width: 100%;
+    }
+    &__close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+    }
+    .emb-title {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 20px;
+        row-gap: 13px;
+        margin-bottom: auto;
+    }
+    &__body {
+        display: grid;
+        gap: 24px;
+        grid-template-areas:
+            "title nav"
+            "slider slider";
+        background-color: #fff;
+        padding: 26px 30px 30px;
+        width: 100%;
+        .emb-title {
+            grid-area: title;
+        }
+    }
+    .emb-card {
+        .emb-title {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 8;
+            overflow: hidden;
+        }
+    }
+    &__navigation {
+        grid-area: nav;
+        display: flex;
+        gap: 10px;
+        min-height: 35px;
+        justify-content: flex-end;
+        .slider-navigation {
+            &_prev,
+            &_next {
+                position: initial;
+                max-width: 35px;
+                max-height: 35px;
+                svg {
+                    width: 7px;
+                    height: 13px;
+                }
+            }
+            @media (max-width: 1000px) {
+                &_prev,
+                &_next {
+                    display: flex;
+                }
+            }
+        }
+    }
+    &__slider {
+        grid-area: slider;
+        overflow: hidden;
+    }
+    @media (max-width: 768px) {
+        &__head {
+            padding: 20px 20px 25px;
+        }
+        &__body {
+            padding: 20px 20px 35px;
+            column-gap: 7px;
+            row-gap: 20px;
+        }
+        .emb-card {
+            .emb-title {
+                -webkit-line-clamp: 5;
+            }
+        }
+    }
+}

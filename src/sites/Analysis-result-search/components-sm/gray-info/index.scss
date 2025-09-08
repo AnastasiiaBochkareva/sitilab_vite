@@ -1,0 +1,230 @@
+.labuda-page {
+    .n-sale-info {
+        border-radius: 20px;
+        background: rgba(243, 246, 249, 1);
+        padding: 30px;
+        &:not(.n-sale-form) {
+            padding-left: 65px;
+            padding-bottom: 50px;
+        }
+        .gray-container {
+        }
+        .n-title-lg-alt {
+            font-size: 28px;
+            line-height: 38px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            li {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 40px;
+                letter-spacing: -2%;
+                padding: 0 !important;
+                &::before {
+                    content: none !important;
+                }
+                a {
+                    color: rgba(0, 180, 234, 1);
+                    text-decoration: none;
+                }
+            }
+        }
+        .n-title-sm {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 38px;
+        }
+    }
+    .n-sale-form {
+        .n-title-lg-alt {
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 25px;
+        }
+        .n-title-sm {
+            text-align: center;
+        }
+        &--submitted {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            img {
+                width: 55px;
+                height: 55px;
+            }
+            .n-title-lg-alt {
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+        }
+        .form {
+            margin-top: 30px;
+            &__inputs {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            &__input,
+            .n-btn {
+                flex: 1;
+                font-family: "Montserrat", sans-serif;
+            }
+            &__input {
+                input {
+                    width: 100%;
+                    padding: 14px 18px 14px 18px;
+                    border-radius: 8px;
+                    background: rgba(255, 255, 255, 1);
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    font-family: "Montserrat", sans-serif;
+                    color: rgba(142, 154, 171, 1);
+                    border: none;
+                    &::placeholder {
+                        font-family: "Montserrat", sans-serif;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 22px;
+                        color: rgba(142, 154, 171, 1);
+                        opacity: 1;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                    &:not(:placeholder-shown) {
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1440px) {
+        .n-sale-info {
+            &:not(.n-sale-form) {
+                padding: 30px 20px;
+                padding-left: 20px;
+            }
+        }
+        .form {
+            &__input,
+            .n-btn {
+                min-width: calc(50% - 5px);
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .n-grid-col-three {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .n-sale-info {
+            border-radius: 0;
+            padding: 30px 20px;
+
+            .n-title-lg-alt {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 38px;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+            &__list {
+                li {
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 28px;
+                }
+            }
+        }
+        .n-sale-form {
+            .n-title-lg-alt {
+                margin-bottom: 2px;
+            }
+            .form {
+                margin-top: 20px;
+                &__input,
+                .n-btn {
+                    min-width: 100%;
+                }
+            }
+        }
+    }
+}
+.main-page {
+    .n-links {
+        margin-bottom: 50px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: rgba(243, 246, 249);
+        padding: 47px 55px;
+        display: flex;
+        align-items: center;
+        column-gap: 25px;
+        row-gap: 20px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .n-link {
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 20px 18px;
+            max-width: max-content;
+            width: 100%;
+
+            p {
+                margin: 0 !important;
+                color: rgba(59, 75, 100);
+                font-family: "Montserrat", sans-serif;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 28px;
+                letter-spacing: -2%;
+            }
+            .img-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 55px;
+                height: 55px;
+                background-color: rgba(230, 248, 253);
+                border-radius: 10px;
+                padding: 5px;
+                overflow: hidden;
+                img {
+                }
+            }
+            &:hover {
+                text-decoration: none !important;
+            }
+        }
+        .last-link {
+            .img-container {
+                padding: 5px 5px 5px 14px;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .n-links {
+            margin-bottom: 30px;
+            padding: 30px 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            border-radius: 0;
+            .n-link {
+                padding: 20px;
+            }
+        }
+    }
+}

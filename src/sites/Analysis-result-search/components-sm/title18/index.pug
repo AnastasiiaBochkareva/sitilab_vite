@@ -1,0 +1,6 @@
+mixin Title18(param)
+    .emb-title=param.title18
+        if(param.span)
+            +Price({
+                text: `${param.price}`
+            })

@@ -1,0 +1,34 @@
+.n-guarantee {
+    background-color: rgba(149, 193, 31, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        transform: rotate(45deg);
+        background-color: #f4f9e8;
+        display: block;
+        left: 18.75%;
+        top: -6px;
+        z-index: -1;
+    }
+}
+.cart-order__alert {
+    background-color: rgba(255, 204, 0, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    img,
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+}

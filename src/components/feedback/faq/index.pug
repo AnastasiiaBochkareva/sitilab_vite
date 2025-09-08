@@ -1,0 +1,17 @@
+mixin Faq(param)
+
+    - param.title = param.title ? param.title : ''
+    - param.p = param.p ? param.p : ''
+    - param.text = config.text.FAQ ?? []
+
+    section.container.faq
+        h2=param.title
+        p=param.p
+        .accordion.reveal-zoom
+            each el in param.text
+                .accordion-item
+                    button.accordion-header
+                        h3=el.h2
+                    .accordion-content
+                        p=el.p
+            

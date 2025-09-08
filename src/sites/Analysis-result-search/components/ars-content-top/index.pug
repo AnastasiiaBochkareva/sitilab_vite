@@ -1,0 +1,58 @@
+mixin Ars-content-top()
+    .ars-content-top
+        .ars-content-top__title Результаты поиска
+        a(href='/').ars-content-top__link.text-blue Популярные исследования 
+            span (12)
+        +Ars-toggle-block({})
+        .ars-content-tabs
+            .ars-content-tabs__nav
+                ul
+                    li
+                        a(href="#ars-tab1") Анализы
+                            span 22
+                    li
+                        a(href="#ars-tab2") Чекапы
+                            span 5
+                    li
+                        a(href="#ars-tab3") Услуги
+                            span 1
+                    li
+                        a(href="#ars-tab4") Инфоповод
+                            span 2
+        .ars-content-tabs
+            .ars-content-tabs__nav.ars-content-tabs__nav-sm
+                ul
+                    li
+                        a(href="#ars-tab5") Анализы
+                            span 22
+                    li
+                        a(href="#ars-tab6") Чекапы
+                            span 5
+    .ars-content-body
+            .ars-content-tabs__content
+                #ars-tab1.ars-content-tabs__tab
+                    
+                    .analysis-result-cards
+                        // Первая пара карточек (0 и 1)
+                        +Ars-content-card({
+                            class: 'ars-content-card__sale-block',
+                            sale: true,
+                            startIndex: 0,
+                            globalIndex: 0 
+                        })
+
+                        // Вторая пара карточек (2 и 3)
+                        +Ars-content-card({
+                            startIndex: 2, 
+                            globalIndex: 2 
+                        })
+                        +Ars-content-card({
+                            class: 'ars-content-card-simple',
+                            isSimpleCard: true
+                        })
+                #ars-tab2.ars-content-tabs__tab
+                    p This is content for Tab 2
+                #ars-tab3.ars-content-tabs__tab
+                    p This is content for Tab 3
+                #ars-tab4.ars-content-tabs__tab
+                    p This is content for Tab 4

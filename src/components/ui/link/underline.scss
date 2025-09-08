@@ -1,0 +1,23 @@
+a:not(.header__logo a, .btn, .footer__logo a, .land-btn) {
+    display: inline-block;
+    transition: color 0.3s ease;
+    position: relative;
+    width: max-content;
+    &:hover {
+        color: color.$gold;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: color.$gold;
+        transition: width 0.3s ease;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+}

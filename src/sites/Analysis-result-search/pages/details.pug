@@ -1,0 +1,78 @@
+extends /sites/Analysis-result-search/layouts/base.pug
+
+block variables
+    - const title = ''
+    - const description = ''
+
+block content
+  .analysis-result-details
+    .ars-content-top__title Общий анализ крови (CBC/Diff - 5 фракций лейкоцитов)
+    .ard-wrapper
+      +Ars-sidebar-categories({
+        class: 'ard-categories'
+      })
+      .ars-content-tabs
+            .ars-content-tabs__nav
+                ul
+                    li
+                        a(href="#ars-tab1") Описание
+                    li
+                        a(href="#ars-tab2") Подготовка
+                    li
+                        a(href="#ars-tab3") Показания
+                    li
+                        a(href="#ars-tab4") Интерпретация
+            .ars-content-body
+              .ars-content-tabs__content
+                  #ars-tab1.ars-content-tabs__tab
+                    .ars-content-flex
+                      .ard-simple-text.collapsed(id="content-block")
+                        .ard-overflow-hidden
+                          div(id="inner-content")
+                            +Ard-simple-text({
+                              title: true
+                            })
+                            +Ard-simple-text({
+                              customTitle: true
+                            })
+                            
+                            +Ard-simple-text({
+                              text : true
+                            })
+                            +Ard-simple-text({
+                              list : true
+                            })
+                        button(id="expand-button") Развернуть
+                      
+                      .ars-content-card-right-wrapper
+                        +Ars-content-card-right({
+                          cardCode: true,
+                          slowClass: 'item-s',
+                          toggle: true,
+                          borderClass: 'item-border-block',
+                          detailsCardBottom: true,
+                          blueBg: true
+                        })
+                  #ars-tab2.ars-content-tabs__tab
+                      p This is content for Tab 2
+                  #ars-tab3.ars-content-tabs__tab
+                      p This is content for Tab 3
+                  #ars-tab4.ars-content-tabs__tab
+                      p This is content for Tab 4
+
+  .analysis
+    section.vnd-container
+      +Analysis-slider({
+        sliderTitle:'С этим анализом заказывают',
+      })
+
+    section.vnd-container
+      +Analysis-slider({
+        sliderTitle:'Дешевле в составе комплекса',
+      })
+
+    section.vnd-container 
+      +Analysis-info({
+        title: 'Важная информация',
+      })
+      

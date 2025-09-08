@@ -1,0 +1,18 @@
+mixin Banner-labuda(param={})
+    .n-banner
+        .n-container.n-flex-jc-sb
+            .n-flex-col-center
+                .n-title-xl Запускаем скидки на нужные анализы
+                p.n-title-xs для школы, детсада и бассейна
+                .n-btns.n-flex-align-center
+                    a(href='#').n-btn-red 
+                        span 15% 
+                        | на энтеробиоз
+                    a(href='#').n-btn-red 
+                        span 30% 
+                        | на комплекс
+            div
+                +Img({
+                    src: 'img/labuda_banner.png',
+                    alt:'Пора готовиться'
+                })

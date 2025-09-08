@@ -1,0 +1,77 @@
+extends /sites/Analysis-result-search/layouts/base.pug
+
+block variables
+    - const title = ''
+    - const description = ''
+
+block content
+    .main-page
+        +Main-banner({
+            slides: [
+                { 
+                    title: 'Ваш подарок к лету - с заботой о здоровье', 
+                    subtitle: 'Сдавайте анализы с выгодой', 
+                    btn: 'Подробнее',
+                    img: 'main-banner-1',
+                    isImg: true, 
+                },
+                {
+                    title: 'Lorem ipsum dolor sit amet.',
+                    subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, corporis!',
+                    btn: 'Lorem ipsum dolor sit amet.',
+                    img: '2gis',
+                    isImg: true,
+                    addImgClass: 'br-0-130'
+                },
+                {
+                    title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+                    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, voluptatum eaque.',
+                    btn: 'Lorem ipsum',
+                    img: 'labuda_banner',
+                    isImg: true
+                },
+                {
+                    title: 'Lorem',
+                    subtitle: 'Lorem, ipsum dolor.',
+                    btn: 'Lorem'
+                },
+            ]
+        })
+
+        +Cards-links({
+            mainCardsLinks: true,
+            cardLinks: [
+                { img: '1', mod: 'allergology', text: 'Аллергология' },
+                { img: '2', mod: 'vitamin', text: 'Витамин D' },
+                { img: '3', mod: 'thyroid', text: 'Щитовидка' },
+                { img: '4', mod: 'ticks', text: 'Клещи' },
+                { img: '5', mod: 'tspot', text: 'T-spot' },
+            ]
+        })
+
+        .n-inner-container 
+            a(href='#').express-card 
+                .express-card__content
+                    .n-title-xl Экспресс-анализы CITO
+                    p.express-card__text Какие тесты можно сделать за 3 часа?
+                .express-card__img
+                    +Img({
+                        src: 'img/cito.png',
+                        alt: 'cito'
+                    })
+                .express-card__icon
+                    svg(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="6.321777" height="11.507812" viewBox="0 0 6.32178 11.5078" fill="#fff")
+                        path(id="Vector" d="M0.12 10L3.64 6.08C3.81 5.89 3.81 5.6 3.64 5.41L0.12 1.5C-0.05 1.3 -0.05 1.01 0.12 0.82L0.72 0.16C0.92 -0.06 1.26 -0.06 1.46 0.16L6.19 5.41C6.36 5.6 6.36 5.89 6.19 6.08L1.46 11.33C1.26 11.56 0.92 11.56 0.72 11.33L0.12 10.67C-0.05 10.48 -0.05 10.19 0.12 10Z" fill-opacity="1.000000" fill-rule="evenodd")
+        
+        +Gray-info({
+            noTitle: true,
+            links: true,
+            newType: true,
+            items: [
+                { text: "Выезд на дом", img: "n-house-1"},
+                { text: "Приём врачей", img: "n-doctor"},
+                { text: "УЗИ", img: "n-usi"},
+                { text: "ЭКГ", img: "n-heart"},
+                { text: "Капельницы, инъекции", img: "n-injection", class: 'last-link'}
+            ],
+        })

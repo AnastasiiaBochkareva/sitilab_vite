@@ -1,0 +1,166 @@
+extends /sites/Analysis-result-search/layouts/base.pug
+
+block variables
+    - const title = ''
+    - const description = ''
+
+block content
+    .labuda-page
+        +Banner-labuda({})
+        +Blocks-two-labuda({
+            addBlockTwoClass: 'add-padding',
+            addLabubuClass: 'no-xs-padding',
+            labubuOne: true,
+            labubuMobImg: 'labubu-mob-1',
+            labubuDeskImg: 'labubu-1',
+            labubuText: `Вам нравится бегать по поликлиникам с непоседой-ребенком, сдавать 
+                <span class="n-title-lg-alt">анализы для справки в бассейн и медкарты 026/У-2000</span> 
+                в школу и детсад? Нет! Я упростил процесс и сделал его выгодным 🌟`,
+            mobFrame: '1'
+        })
+        +Blocks-two-labuda({
+            labubuSaleBlockBlue: true,
+            wrapperClass: 'n-block-two__cards n-dark-blue',
+            altText: true,
+            valid: true
+        })
+        +Blocks-six-labuda({
+        })
+        +Blocks-two-labuda({
+            labudaSaleBlockGray: true,
+            wrapperClass: 'n-block-two__cards n-block-two__cards-info',
+            addBlockTwoClass: 'n-bg-gray n-mb',
+            addInnerLabubuClass: ''
+        })
+        +Blocks-two-labuda({
+            addLabubuClass: 'no-xs-padding',
+            labubuOne: true,
+            addBlockTwoClass: 'n-col-img__one-reverse add-padding',
+            labubuMobImg: 'labubu-mob-2',
+            labubuDeskImg: 'labubu-2',
+            labubuText: `Почему именно комплекс? Родители любят все по делу, сразу и со скидкой. Сдали — выдохнули, сэкономили. Все для садика и школы — в одном комплексе. Проверили — и можно бежать за школьным рюкзаком, ручками и тетрадками 😉`,
+            mobFrame: '2'
+        })
+        +Dashed-block({
+            text: 'Все анализы для медкарты <span class="highlight">по форме 026/У</span> за один визит',
+            economy: '+ экономия 30%'
+        })
+
+        +Gray-info({
+            title: 'Как действуют скидки',
+            list: true
+            
+        })
+        +Blocks-two-labuda({
+            addBlockTwoClass: 'add-padding',
+            addLabubuClass: 'no-xs-padding',
+            labubuOne: true,
+            labubuMobImg: 'labubu-mob-3',
+            labubuDeskImg: 'labubu-3',
+            title: true,
+            titleText: 'Не торопитесь убегать!',
+            labubuText: `Забота — это не только чек-лист обязательных анализов. Это спокойствие за здоровье солнышка в вашей вселенной. Хотите проверить чуть больше и убедиться, что ваше чудо здорово?`,
+            mobFrame: '3'
+        })
+        .n-inner-container 
+                .labuda-analysis__slider
+                    .swiper-wrapper 
+                        .swiper-slide
+                            +Card({
+                                newText: true,
+                                addNewText: true,
+                                addNewTextBlock: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet pariatur, porro voluptatibus dolorum sunt ea vitae laboriosam ad, asperiores facere sequi reiciendis delectus doloremque ipsum quaerat! A dolorem exercitationem suscipit.',
+                                classSaleCard: 'n-card-row',
+                                noAddText: true,
+                                addText: true,
+                                addTextBlock: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet pariatur, porro voluptatibus dolorum sunt ea vitae laboriosam ad, asperiores facere sequi reiciendis delectus doloremque ipsum quaerat! A dolorem exercitationem suscipit.',
+                            })
+                        .swiper-slide
+                            +Card({
+                                newText: true,
+                                addNewText: true,
+                                addNewTextBlock: 'IgE общий',
+                                classSaleCard: 'n-card-row',
+                                noAddText: true,
+                                addText: true,
+                                addTextBlock: 'Вылавливаем наследственные и скрытые аллергии, чтобы без сюрпризов.',
+                            })
+                        .swiper-slide
+                            +Card({
+                                newText: true,
+                                addNewText: true,
+                                addNewTextBlock: 'Витамины B9 и B12',
+                                classSaleCard: 'n-card-row',
+                                noAddText: true,
+                                addText: true,
+                                addTextBlock: 'Умные дети и крепкие нервы у родителей!',
+                            })
+                        .swiper-slide
+                            +Card({
+                                newText: true,
+                                addNewText: true,
+                                addNewTextBlock: 'Витамин D + кальций',
+                                classSaleCard: 'n-card-row',
+                                noAddText: true,
+                                addText: true,
+                                addTextBlock: 'Для сильных костей и бодрых спортивных переменок.',
+                            })
+                        .swiper-slide
+                            +Card({
+                                newText: true,
+                                addNewText: true,
+                                addNewTextBlock: 'Витамин D, фосфор, магний',
+                                classSaleCard: 'n-card-row',
+                                noAddText: true,
+                                addText: true,
+                                addTextBlock: 'Энергия без истерик и равномерный рост.',
+                            })
+                    +Slider-navigation-labuda()
+                    +Card({
+                        newText: true,
+                        addNewText: true,
+                        addNewTextBlock: 'ЭКГ',
+                        classSaleCard: 'n-card-row n-card-row__no-code',
+                        noAddText: true,
+                        noBloodBlock: true,
+                        noCodeBlock: true,
+                        addText: true,
+                        addTextBlock: 'Обязательная проверка сердца перед садом и школой.',
+                        noPromoBottom: true,
+                        clarifyBlock: true,
+                        
+                    })
+                    
+                    
+        +Dashed-block({
+            title: 'Памятка для родителей от Лабубы',
+            text: 'Скачайте чек-лист на холодильник — все специалисты и необходимые анализы по приказам Минздрава РФ №514н (изм. 13.06.2019) и №124н для вашего спокойствия и уверенности.',
+            economyImg: true,
+            actions: true,
+            actionOne: 'В детский сад искать друзей для шалостей',
+            actionTwo: 'В первый класс – в первый раз',
+            addClass: 'n-dashed-block-xl'
+        })
+
+        +Blocks-two-labuda({
+            addLabubuClass: 'no-xs-padding',
+            labubuOne: true,
+            addBlockTwoClass: 'n-col-img__one-reverse add-padding',
+            labubuMobImg: 'labubu-mob-4',
+            labubuDeskImg: 'labubu-4',
+            labubuText: `Ваши дети — умнички, а вы — суперродители. Я просто помогаю, чтобы здоровье было без забот и с запасом уверенности. До встречи в Ситилаб!`,
+            mobFrame: '4'
+        })
+        
+        +Gray-info({
+            addClass: 'n-sale-form',
+            title: 'Оставайтесь на связи!',
+            text: 'Подпишитесь на рассылку выгодных предложений и «полезностей» для здоровья от Ситилаб',
+            form: true
+        })
+        +Gray-info({
+            submitted: true,
+            title: 'Спасибо, что вы с нами!',
+            text: 'Ура! Теперь мы сможем радовать вас полезной информацией о здоровье 🤗',
+            addClass: 'n-sale-form--submitted'
+        })

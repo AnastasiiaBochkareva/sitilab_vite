@@ -1,0 +1,107 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+@use "@/sites/Analysis-result-search/variables" as var;
+.a-card {
+    height: 100%;
+    border: 1px solid #b2bac6;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 20px 30px;
+    background-color: #fff;
+    &-code {
+        text-decoration: none;
+        transition: var.$transition-default;
+        margin-bottom: 10px;
+        &:hover {
+            color: rgb(0, 171, 223);
+        }
+    }
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        .n-title-lg-alt {
+            line-height: 20px !important;
+            transition: var.$transition-default;
+            text-decoration: none;
+            color: rgb(59, 75, 100);
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 8;
+            overflow: hidden;
+            &:hover {
+                color: rgb(0, 171, 223);
+            }
+        }
+    }
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+        .n-title-xs-alt {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+    }
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 26px;
+        .a-title-sm {
+            color: rgb(0, 171, 223) !important;
+            font-size: 28px !important;
+        }
+        .a-btn-basket {
+            background-color: #00abdf;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 4px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: max-content;
+            padding: 5px 6px;
+            cursor: pointer;
+            svg,
+            img {
+                width: 24px;
+                height: 24px;
+                fill: #fff;
+            }
+            span {
+                color: #fff;
+                margin-bottom: 0;
+            }
+            &:hover {
+                background-color: #11c3f3;
+            }
+        }
+    }
+    .a-subtitle {
+        font-weight: 500 !important;
+        color: rgb(59, 75, 100);
+        white-space: nowrap;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: transparent;
+            stroke: #00abdf;
+        }
+    }
+    .a-title-sm {
+        text-align: left !important;
+        margin-bottom: 0 !important;
+        &:hover {
+            color: rgb(0, 171, 223);
+        }
+    }
+    @media (max-width: 768px) {
+        &__btn {
+            margin-top: 15px;
+        }
+    }
+}

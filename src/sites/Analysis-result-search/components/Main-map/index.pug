@@ -1,0 +1,36 @@
+mixin Main-map(param={})
+    .main-map
+        //- ._title Медицинские центры
+        //- .main-map__top
+            //- .col
+            //-     button.active Списком
+            //-     button На карте
+        if(!param.noTop)
+            .main-map__body.bg-light-gray 
+                //- +Input({type: 'search', askSearch: false, placeholder: 'Введите адрес или метро',noClear: true})
+                button.c-btn.c-btn_primary(data-open-filters) Фильтры
+                    //- +icon('filter')
+                button.c-btn.c-btn_outline Сбросить фильтры 
+            
+            
+        //- .main-map__bottom
+        //-     .col.active
+        //-         if(!param.noResultSearch)
+        //-             .filter-result-search.bg-blue Найдено: 40
+        //-         ul.accordion
+        //-             each el in Array(3)
+        //-                 +Filter-result({
+        //-                     unavailable: true
+        //-                 })
+        //-     .col.col__map
+        //-         img(src="/assets/img/categories/map.png", alt="")
+        //-     div(data-choosing-filters)
+        //-         //- +Checkbox({text: 'Работа в субботу'})
+        //-         //- +Checkbox({text: 'Работа без выходных'})
+        //-         //- +Checkbox({text: 'Удобная парковка'})
+        //-         //- +Checkbox({text: 'Въезд с колясками'})
+        //-         //- +Checkbox({text: 'Оплата банковскими картами'})
+        //-         button(data-close-filters)
+        //-             //- +icon('close')
+        //-     button.c-btn.c-btn_outline(data-open-filters) Фильтры
+        //-             //- +icon('filter')

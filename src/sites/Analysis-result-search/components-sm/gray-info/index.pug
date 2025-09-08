@@ -1,0 +1,54 @@
+mixin Gray-info(param={})
+    .n-inner-container
+        if(!param.newType)
+            .n-sale-info.gray-container(class=param.addClass)
+                if(param.submitted)
+                    +Img({
+                        src: 'img/success.svg',
+                        alt: 'success'
+                    })
+                if(!param.noTitle)
+                    .n-title-lg-alt=param.title
+                if(param.list)
+                    ul.n-sale-info__list
+                        li 1. Сроки акции: 01.08.2025 – 30.09.2025 
+                        li 2. Скидки предоставляем во всех медцентрах Ситилаб по промокодам (на дом акцию не привозим и онлайн не активируем). 
+                        li 3. Скидка 30% на комплекс «Мой ребенок идет в садик или в школу» (код 99-00-836) — по промокоду «ШКОЛА». 
+                        li 4. Скидка 15% на исследование на энтеробиоз (80-66-007) — по промокоду «ЧИСТОТА». 
+                        li 5. Взятие биоматериала: оплачивается отдельно, никаких «скрытых доплат». 
+                        li 6. С другими скидками Ситилаб не сочетается. 
+                        li 7. Вопросы: все подскажут администраторы в медцентре или по тел. 
+                            a(href='tel:88001003630') 8(800)100-36-30. 
+                        li 8. Скучные, но важные подробности по ссылкам 
+                            a(href='#') [ 1 ] 
+                            |и 
+                            a(href='#') [ 2 ].
+                if(param.text)
+                    p.n-title-sm=param.text
+                if(param.form)
+                    form.form
+                        .form__inputs
+                            .form__input 
+                                //- label(for="labuda-username") Имя<span>*</span>
+                                input(type="text" name="labuda-username" id='labuda-username' placeholder="Имя")
+
+                            .form__input 
+                                //- label(for="labuda-phone") Телефон<span>*</span>
+                                input(type="tel" name="labuda-phone" id='labuda-phone' placeholder="+7 (___) ___-__-__")
+
+                            .form__input 
+                                //- label(for="labuda-email") Email<span>*</span>
+                                input(type="email" name="labuda-email" id='labuda-email' placeholder="E-mail")
+                            button.n-btn(type="button" disabled) 
+                                span.n-title-xs  🚀 Подписаться
+        else
+            if(param.links)
+                .n-links
+                    each el in param.items
+                        a(href="#" class=el.class ? el.class : false).n-link
+                            .img-container
+                                +Img({
+                                    src: `img/${el.img}.svg`,
+                                    alt: 'img'
+                                })
+                            p=el.text

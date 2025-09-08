@@ -1,0 +1,36 @@
+// -
+    param {
+        items: [{label, targetId}]
+    }
+
+mixin TabsNav(param = {})
+
+    - param.items = param.items || [{ label: 'test 1', targetId: 'test2' }, { label: 'test 2', targetId: 'test2' }]
+
+      // не добавлять машинку
+      if (!param.noCar)
+        .tabs-img
+          .tabs-car(id=param.isCar ? "car" : false)
+            img(src="/assets/img/categories/vnd/car.png", alt="")
+            div(id='dotted')
+          .tabs-mark 
+            img(src="/assets/img/categories/vnd/mark.png", alt="")
+
+
+    .tabs-nav(class=param.class)
+        if (param.tabsBtn)
+          .sidebar-btn
+            +icon('a-analysis')
+            a Анализы
+            //- +icon('a-close')
+        - for (let i = 0; i < param.items.length; i++)
+
+            button.tabs-nav__btn(
+                class=i==0 ? 'active' : ''
+                data-tab-target=param.items[i].targetId
+            ) 
+
+              // не добавлять svg на кнопку
+              if (!param.noSvg)
+                +icon('icon-' + param.items[i].svg)
+              span !{param.items[i].label}

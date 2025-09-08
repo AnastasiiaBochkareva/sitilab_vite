@@ -1,0 +1,32 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+@use "@/sites/Analysis-result-search/variables" as var;
+.n-btn-radio__full {
+    width: calc(50% - 2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    input[type="radio"] {
+        display: none;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    input[type="radio"] + label {
+        position: relative;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    input[type="radio"]:checked + label {
+        background-color: color.$blue;
+        color: #fff;
+        border: 6px solid color.$blue;
+        font-weight: 600;
+    }
+}

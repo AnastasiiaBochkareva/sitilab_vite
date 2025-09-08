@@ -1,0 +1,19 @@
+mixin Ars-sidebar(param = {})
+    .ars-sidebar__wrapper
+        +Ars-sidebar-sheckboxes({
+            title: "Кто я",
+            number: '1',
+            checkboxes: ['Женщина', 'Мужчина', 'Ребенок'], 
+            button: true,
+            class: 'ars-sidebar__checkboxes ' + (param.class || '')
+        })
+        +Ars-sidebar-sheckboxes({
+            title: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, voluptatem!",
+            number: '100000',
+            checkboxes: ['Щитовидная железа', 'Поджелудочная железа', 'Желудок', 'Кишечник', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, id perspiciatis commodi fugiat placeat quaerat dicta natus odit tempore provident! Corrupti nam earum tempora est. Ab optio culpa unde dolore?'], 
+            button: true
+        })
+        +Ars-sidebar-categories({
+            class: 'ars-sidebar-closet'
+        })
+        +Ars-sidebar-popular()

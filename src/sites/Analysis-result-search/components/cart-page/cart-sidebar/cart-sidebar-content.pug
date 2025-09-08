@@ -1,0 +1,60 @@
+mixin Cart-sidebar-content(param={})
+    .cart-order
+        if(param.contentForTabs)
+            .cart-order__tab-one.active
+                +Content-for-tabs({
+                    notAuxTitle: true,
+                    title: 'Ваш заказ',
+                    noCheck: true,
+                    noCenter: true, 
+                    noToggle: true,
+                    noDetails: true,
+                    whereAnalysis: true,
+                    noOrder: true
+                })
+            .cart-order__tab-three
+                a(href='#'  data-open-modal='#modal-required-documents') 
+                    |Документы необходимые для посещения
+                    +Img({
+                        src: 'img/n-arrow-list.svg',
+                        alt: 'Follow the link'
+                    })
+                a(href='#') 
+                    |Правила подготовки к исследованиям
+                    +Img({
+                        src: 'img/n-arrow-list.svg',
+                        alt: 'Follow the link'
+                    })
+                a(href='#') 
+                    |Перейти в чат-бот для получения бонусов и информации о заказе
+                    +Img({
+                        src: 'img/n-arrow-list.svg',
+                        alt: 'Follow the link'
+                    })
+                .cart-order__tab-three_check
+                    .n-title-xs-alt Чек об оплате
+                    a(href='#').n-title-xs-alt
+                        span Открыть
+                +Attention({
+                    isSidebarCost: true,
+                    img: 'alert-triangle.svg',
+                    alt: 'Warning'
+                })
+                a(href='#').n-btn 
+                    span.n-title-xs Оплатить сейчас и получить бонусы
+        else
+            +Content-for-tabs({
+                data: true
+            })
+
+    if(param.slider)
+        +Slider({
+            sliderBlockClass: 'cart-order__slider',
+            top: true,
+            topClass: 'cart-order__slider_top',
+            sliderNavBlockClass: 'cart-order__slider_nav',
+            sliderTitleClass: 'n-title-lg-alt',
+            sliderTitleText: 'Мы рекомендуем',
+            isNavTop: true,
+            sliderContainerClass: 'cart-order__slider_container'
+        })

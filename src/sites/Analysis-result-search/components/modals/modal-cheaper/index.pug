@@ -1,0 +1,30 @@
+mixin Modal-cheaper(param)
+    .modal-fixed
+        .modal-cheaper
+            .modal-cheaper__head
+                .modal-cheaper__close
+                    +Img({
+                        src: 'img/modal-fixed-close.svg',
+                        alt: 'Close modal'
+                    })
+                +Code({
+                    embCode: `${param.embCode}`
+                })
+                +Title18({
+                    title18: `${param.headTitle}`,
+                    span: true,
+                    price: `${param.price}`
+                })
+                    span=param.price
+            .modal-cheaper__body
+                +Title18({
+                    title18: `${param.bodyTitle}`
+                })
+                .modal-cheaper__navigation
+                    +Slider-navigation({})
+                .modal-cheaper__slider
+                    .swiper-wrapper 
+                        each el in Array(8)
+                            .swiper-slide
+                                +Card()
+

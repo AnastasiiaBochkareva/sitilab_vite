@@ -1,0 +1,37 @@
+mixin Dashed-block(param={})
+    .n-inner-container
+        .n-dashed-block(class=param.addClass)
+            svg.n-dashed-border(xmlns="http://www.w3.org/2000/svg")
+                rect(
+                    x="1"
+                    y="1"
+                    width="calc(100% - 2px)"
+                    height="calc(100% - 2px)"
+                    rx="20"
+                    ry="20"
+                    fill="none"
+                    stroke="rgb(0,171,223)"
+                    stroke-width="1"
+                    stroke-dasharray="5 5"
+                )
+            if(param.title)
+                .n-title-lg-alt=param.title
+            if(param.text)
+                p.n-title-sm!= param.text
+            if(param.economy)
+                p.n-title-sm-alt.n-economy=param.economy
+            if(param.economyImg)
+                +Img({
+                    src: 'img/n-economy-1.png',
+                    alt: '1',
+                    class: 'n-economy-one'
+                })
+                +Img({
+                    src: 'img/n-economy-2.png',
+                    alt: '2',
+                    class: 'n-economy-two'
+                })
+            if(param.actions)
+                .n-actions 
+                    a(href='#').n-action.n-action-one=param.actionOne
+                    a(href='#').n-action.n-action-two=param.actionTwo

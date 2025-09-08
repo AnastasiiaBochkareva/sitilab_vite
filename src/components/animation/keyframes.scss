@@ -1,0 +1,120 @@
+// (style='animation-delay: 0s;')
+
+.spring-in {
+    opacity: 0;
+    transform: scale(0.5);
+    animation: springIn 1s ease forwards;
+}
+
+@keyframes springIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes colorShift {
+    0% {
+        background-position: -100%;
+        color: rgb(69, 248, 130);
+    }
+    50% {
+        background-position: 100%;
+        color: white;
+    }
+    100% {
+        background-position: -100%;
+        color: rgb(69, 248, 130);
+    }
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMovement {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes gradientTextMovement {
+    0% {
+        background-position: 0% 50%;
+        color: black;
+    }
+    50% {
+        background-position: 100% 50%;
+        color: transparent;
+        background-clip: text;
+    }
+    100% {
+        background-position: 0% 50%;
+        color: black;
+    }
+}
+
+@keyframes resetTextColor {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: black;
+    }
+}

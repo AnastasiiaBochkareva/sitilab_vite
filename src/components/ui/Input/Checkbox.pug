@@ -1,0 +1,32 @@
+//-
+	param.name
+	param.value
+	param.checked
+	param.disabled
+	param.disabled
+	param.text
+	param.reverse
+
+mixin Checkbox(param = {})
+
+	- param.name = param.name ? param.name : 'name-' + Math.floor(Math.random() * 6666);
+	- param.id = Math.floor(Math.random() * 6666);
+
+	.v-checkbox(class=param.reverse ? 'checkbox_reverse' : '')
+		input.v-checkbox__input(type="checkbox" name=param.name value=param.value checked=param.checked disabled=param.disabled id=param.id)
+		if(param.link)
+			label(for=param.id).v-checkbox__label #{param.text}
+				a(href='#') #{param.textLink}
+		else
+			label(for=param.id class=`${param.labelClass}`).v-checkbox__label #{param.text}
+				if(param.span)
+					span(class=`${param.spanClass}`)=`${param.spanText}`
+
+mixin CheckboxBtn(param = {})
+
+	- param.name = param.name ? param.name : 'name-' + Math.floor(Math.random() * 6666);
+	- param.id = Math.floor(Math.random() * 6666);
+
+	.checkbox-btn(class=param.reverse ? 'checkbox_reverse' : '')
+		input.checkbox-btn__input(type="checkbox" name=param.name value=param.value checked=param.checked disabled=param.disabled id=param.id)
+		label(for=param.id).checkbox-btn__label #{param.text}

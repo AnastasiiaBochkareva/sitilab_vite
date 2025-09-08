@@ -1,0 +1,137 @@
+@mixin transition-mix(
+    $property: all,
+    $duration: 0.2s,
+    $timing: linear,
+    $delay: 0s
+) {
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-timing-function: $timing;
+    transition-delay: $delay;
+}
+.btn {
+    @include transition-mix;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover,
+    &.active {
+        color: #fff;
+    }
+}
+.content__inner {
+    // width: 375px;
+    height: 550px;
+    margin: auto;
+    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+        0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+.tabs {
+    position: relative;
+    padding: 15px;
+    height: 100%;
+    overflow: hidden;
+}
+.tabs__nav {
+    position: relative;
+}
+.tabs__nav-decoration {
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: width 0.2s linear 0s, transform 0.2s ease-out 0s;
+    border-radius: 3px;
+    z-index: 1;
+}
+.tabs__nav-list {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    z-index: 5;
+    gap: 10px;
+    @media (max-width: 767px) {
+        overflow-x: scroll;
+        padding-bottom: 10px;
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #ccc;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #000;
+            border-radius: 2px;
+        }
+    }
+}
+.tabs__nav-item {
+    @include transition-mix($delay: 0s);
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    white-space: nowrap;
+    border: 2px solid #000;
+    &.active {
+        @include transition-mix($delay: 0.05s);
+        color: #fff;
+        background-color: #000;
+    }
+    &:hover:not(.active) {
+        background-color: #333;
+    }
+}
+.tabs__panels {
+    position: relative;
+    margin-top: 30px;
+    background-color: #000;
+}
+.tabs__panel {
+    transition: none;
+    height: 0;
+    transform: scale(0.8);
+    width: 100%;
+    opacity: 0;
+    &.active {
+        transition: all 0.25s linear 0s;
+        transform: scale(1);
+        height: 100%;
+        opacity: 1;
+    }
+}
+.tabs__panel-content {
+    margin: auto;
+}
+.tabs__panel-card {
+    display: flex;
+    padding: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+    h2 {
+        margin-bottom: 30px;
+    }
+    h3,
+    p {
+        margin-bottom: 20px;
+    }
+    ul {
+        li {
+            margin: 10px 0;
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}
+.tabs__panel-card--spaced-between {
+    justify-content: space-between;
+}

@@ -1,0 +1,173 @@
+.footer__accordion {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    max-width: 100%;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    .accordion {
+        &__item {
+            background-color: transparent;
+            border-bottom: none;
+            max-width: max-content;
+            padding: 0 !important;
+            &.active {
+                .accordion__icon {
+                    img {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+        &__head {
+            &-text {
+                color: rgba(255, 255, 255, 1);
+                font-family: "Montserrat", sans-serif;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 30px;
+                letter-spacing: 0%;
+                text-transform: capitalize;
+                margin-bottom: 10px;
+            }
+            &-content {
+                padding: 0;
+                min-height: initial;
+            }
+            &:hover {
+                .accordion__head-text {
+                    color: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+        &__body {
+            &-content {
+                padding: 0;
+                display: flex;
+                column-gap: 40px;
+                ul {
+                    list-style: none !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 6px;
+                    max-width: max-content;
+                }
+            }
+        }
+        &__link {
+            text-decoration: none;
+            border: none;
+            color: rgba(255, 255, 255, 1);
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: 0%;
+            text-align: left;
+            transition: all 0.3s ease;
+            &:hover {
+                color: rgba(177, 178, 180, 1);
+            }
+            &.highlight {
+                font-weight: 700;
+                line-height: 26px;
+            }
+        }
+        @media (min-width: 1221px) {
+            &__icon {
+                display: none;
+            }
+            &__head {
+                cursor: default;
+                display: none;
+            }
+            &__body {
+                opacity: 1;
+                max-height: initial;
+            }
+        }
+    }
+    .first-item {
+        color: rgba(255, 255, 255, 1);
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 0%;
+        text-align: left;
+        text-transform: capitalize;
+        margin-bottom: 4px;
+    }
+    .last-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 222px;
+        .footer {
+            &__social {
+                display: none;
+            }
+            &__app {
+                display: flex;
+            }
+        }
+    }
+    @media (max-width: 1220px) {
+        flex-direction: column;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 5px 15px 20px !important;
+        gap: 0;
+        .accordion {
+            &__item {
+                max-width: 100%;
+                &:not(.last-item) {
+                    border-bottom: 1px solid rgba(62, 62, 62, 1);
+                    padding: 5px 0 !important;
+                }
+            }
+            &__icon {
+                right: 0;
+                img {
+                    transition: transform 0.2s ease-in-out;
+                    width: 12px;
+                    height: 6.67px;
+                }
+            }
+            &__head {
+                &-text {
+                    margin-bottom: 0;
+                }
+            }
+            &__body {
+                &-content {
+                    flex-direction: column;
+                    row-gap: 6px;
+                    margin-top: 5px;
+                    ul {
+                        max-width: 100%;
+                        li {
+                        }
+                        .first-item {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .last-item {
+            padding: 20px 0 0;
+            align-items: center;
+            gap: 15px;
+            .footer__app {
+                display: none;
+            }
+            .footer__social {
+                display: block;
+            }
+        }
+    }
+}

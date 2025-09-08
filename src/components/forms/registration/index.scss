@@ -1,0 +1,51 @@
+.modal {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    &.active {
+        // display: flex;
+    }
+    .btn-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .register-modal,
+    .login-form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 500px;
+        width: 100%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    input {
+        width: 100%;
+        padding: 8px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        outline: none;
+
+        &:focus {
+            border-color: rgb(69, 248, 130);
+            box-shadow: 0 0 5px rgba(69, 248, 130, 0.5);
+        }
+    }
+    #modal-register-btn,
+    .btn-close,
+    #modal-login-btn {
+        cursor: pointer;
+    }
+}
+.registration {
+    .auth-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        button {
+        }
+    }
+}

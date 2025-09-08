@@ -1,0 +1,31 @@
+mixin Form(param = {})
+    - param.class = param.class ? param.class : ''
+    - param.btnClass = param.btnClass ? param.btnClass : ''
+    - param.title = param.title ? param.title : ''
+    - param.hidden = param.hidden ? param.hidden : ''
+    - param.subtitle = param.subtitle ? param.subtitle : ''
+    - param.textarea = param.textarea ? param.textarea : ''
+
+    form.form.contact_form(action="/thanks_form.php" method="POST" id='form' class=param.class)
+        .contacts__text
+            if(param.hOne)
+                h1=param.title
+            if(param.hTwo)
+                h2=param.title
+                    if(param.isHidden)
+                        span.hidden=param.hidden
+            p=param.subtitle
+
+        .form__inputs
+            input.form__input(type="text" name="name" placeholder=`${param.placeholderName}` required="")
+            input.form__input(type="email" name="email" placeholder=`${param.placeholderEmail}` required="")
+            if(param.textarea)
+                textarea.form__textarea(id="message" name="message" placeholder=`${param.placeholderTextarea}` rows="5" required='')
+            label.form__checkbox
+                input(type="checkbox" name="privacy" value="on" required="")
+                span=param.span
+                    // I accept the 
+                    a(href="/privacy-policy/" class=param.privacyClass)=param.privacyText
+                    // Privacy Policy
+
+            button.form__btn.btn.btn-primary(type="submit" class=param.btnClass)=param.btnText

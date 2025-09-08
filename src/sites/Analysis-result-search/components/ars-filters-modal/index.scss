@@ -1,0 +1,144 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+.ars-filters-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: #fff;
+    // height: 100%;
+    height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    &__header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgb(243, 246, 249);
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 5px;
+        column-gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 20px;
+        z-index: 9999;
+    }
+    &__clean {
+        text-decoration: none;
+        color: rgb(142, 154, 171);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 35px;
+    }
+    &__close {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        img {
+            width: 12px;
+            height: 12px;
+        }
+    }
+    &__content {
+        height: calc(100vh - 135px);
+        padding-top: 50px;
+        overflow-y: scroll;
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 9999;
+        padding: 10px 20px 30px;
+        box-shadow: 0 -2px 20px 0 rgba(235, 241, 251, 1);
+    }
+    &__confirm {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 35px;
+        color: #fff;
+        background-color: color.$blue;
+        transition: background-color 0.3s ease;
+        padding: 5px 34px;
+        border-radius: 8px;
+        max-width: 335px;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+            background-color: color.$blue-hover;
+        }
+    }
+    .ars-sidebar__wrapper {
+        max-width: 100%;
+        padding: 22px 20px 30px;
+        > div {
+            border-bottom: 1px solid rgb(217, 225, 233);
+            padding-bottom: 15px;
+        }
+        .ars-sidebar__checkboxes {
+            .ars-checkbox {
+                &__custom {
+                    display: none;
+                }
+                &__input:checked
+                    + .ars-checkbox__custom
+                    + .ars-checkbox__label {
+                    background-color: color.$blue;
+                    border-color: color.$blue;
+                    color: #fff;
+
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+                &__label {
+                    background-color: rgb(243, 246, 249);
+                    padding: 4px 12px;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+    .ars-sidebar__checkboxes-modal {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        .ars-checkboxes__title,
+        .ars-sidebar__showmore {
+            width: 100%;
+        }
+    }
+    &.active {
+        display: block;
+    }
+    @media (max-width: 768px) {
+        .ars-sidebar__wrapper {
+            display: flex;
+            gap: 15px;
+        }
+        &__categories {
+            .ars-sidebar-categories__head {
+                display: none;
+            }
+            .ars-sidebar-categories__body {
+                display: flex;
+                border-right: none;
+                border-left: none;
+                border-radius: 0;
+            }
+        }
+    }
+}

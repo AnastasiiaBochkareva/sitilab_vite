@@ -1,0 +1,5 @@
+mixin Ars-tags()
+    - const tags = ['Клинический анализ крови', 'ОАК', 'ПЦР-исследование для выявления ДНК хламидии трахоматис']
+    .ars-tags
+        each tag in tags
+            a(href='/').ars-tag=tag

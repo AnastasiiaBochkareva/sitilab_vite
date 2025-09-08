@@ -1,0 +1,122 @@
+// @use "@/sites/MetaPlaybook/components/header/index" as header;
+@use "@/sites/Analysis-result-search/components/Ars-sidebar/index" as
+    Ars-sidebar;
+@use "@/sites/Analysis-result-search/components/Ars-sidebar-sheckboxes/index" as
+    Ars-sidebar-sheckboxes;
+@use "@/sites/Analysis-result-search/components/ars-sidebar-categories/index" as
+    ars-sidebar-categories;
+
+@use "@/sites/Analysis-result-search/components/ars-sidebar-showmore/index" as
+    ars-sidebar-showmore;
+@use "@/sites/Analysis-result-search/components/ars-sidebar-popular/index" as
+    ars-sidebar-popular;
+
+@use "@/sites/Analysis-result-search/components/ars-content-top/index" as
+    ars-content-top;
+@use "@/sites/Analysis-result-search/components/ars-content-card/index" as
+    ars-content-card;
+@use "@/sites/Analysis-result-search/components/ars-tags/index" as ars-tags;
+@use "@/sites/Analysis-result-search/components/ars-filters-modal/index" as
+    ars-filters-modal;
+@use "@/sites/Analysis-result-search/components/ars-toggle-block/index" as
+    ars-toggle-block;
+@use "@/sites/Analysis-result-search/components/ard-simple-text/index" as
+    ard-simple-text;
+@use "@/sites/Analysis-result-search/components/analysis-info/index" as
+    analysis-info;
+@use "@/sites/Analysis-result-search/components/analysis-slider/index" as
+    analysis-slider;
+@use "@/sites/Analysis-result-search/components/analysis-card/index" as
+    analysis-card;
+@use "@/sites/Analysis-result-search/components/slider-navigation/index" as
+    slider-nav;
+
+@use "@/sites/Analysis-result-search/components/ars-categories-modal/index" as
+    ars-categories-modal;
+
+@use "@/sites/Analysis-result-search/components/slider/index" as slider;
+
+// WEBPACK
+@use "@/sites/Analysis-result-search/components/Main-map/index" as Main-map;
+@use "@/sites/Analysis-result-search/components/Filter-result/index" as
+    Filter-result;
+
+// COMPONENTS_SM
+@use "@/sites/Analysis-result-search/components-sm/bonuses/index" as bonuses;
+@use "@/sites/Analysis-result-search/components-sm/code/index" as code;
+@use "@/sites/Analysis-result-search/components-sm/title18/index" as title18;
+@use "@/sites/Analysis-result-search/components-sm/card/index" as card;
+@use "@/sites/Analysis-result-search/components-sm/simple-text/index" as
+    simple-text;
+@use "@/sites/Analysis-result-search/components-sm/price/index" as price;
+@use "@/sites/Analysis-result-search/components-sm/btn-cart/index" as btn-cart;
+@use "@/sites/Analysis-result-search/components-sm/tooltip-info/index" as
+    tooltip-info;
+@use "@/sites/Analysis-result-search/components-sm/btn-radio/index" as btn-radio;
+@use "@/sites/Analysis-result-search/components-sm/btn-radio-full/index" as
+    btn-radio-full;
+@use "@/sites/Analysis-result-search/components-sm/toggle-block/index" as
+    toggle-block;
+@use "@/sites/Analysis-result-search/components-sm/attention/index" as attention;
+@use "@/sites/Analysis-result-search/components-sm/progress-bar/index" as
+    progress-bar;
+@use "@/sites/Analysis-result-search/components-sm/overflow-x-scroll/index" as
+    overflow-x-scroll;
+@use "@/sites/Analysis-result-search/components-sm/bonus-block/index" as
+    bonus-block;
+
+// MODALS
+@use "@/sites/Analysis-result-search/components/modals/modal-cheaper/index" as
+    modal-cheaper;
+@use "@/sites/Analysis-result-search/components/modals/modal-map/index" as
+    modal-map;
+@use "@/sites/Analysis-result-search/components/modals/modal-required-documents/index"
+    as modal-required-documents;
+
+// CART-PAGE
+@use "@/sites/Analysis-result-search/components/cart-page/cart-card/index" as
+    cart-card;
+@use "@/sites/Analysis-result-search/components/cart-page/cart-sidebar/index" as
+    cart-sidebar;
+
+// UI
+@use "@/components/ui/MyModal/index" as MyModal;
+@use "@/components/ui/Accordion/Accordion" as Accordion;
+
+// LABUDA
+@use "@/sites/Analysis-result-search/components/banner/banner-labuda/index" as
+    banner-labuda;
+@use "@/sites/Analysis-result-search/components/blocks-two/blocks-two-labuda/index"
+    as blocks-two-labuda;
+@use "@/sites/Analysis-result-search/components/blocks-two/blocks-six-labuda/index"
+    as block-six-labuda;
+@use "@/sites/Analysis-result-search/components/blocks-two/blocks-two-sale/index"
+    as blocks-two-sale;
+@use "@/sites/Analysis-result-search/components-sm/dashed-block/index" as
+    dashed-block;
+@use "@/sites/Analysis-result-search/components-sm/gray-info/index" as gray-info;
+@use "@/sites/Analysis-result-search/components-sm/analysis-row/index" as
+    analysis-row;
+@use "@/sites/Analysis-result-search/components/slider-navigation/labuda/index"
+    as slider-nav-labuda;
+
+// FOOTER
+@use "@/sites/Analysis-result-search/components/footer/index" as footer;
+@use "@/sites/Analysis-result-search/components/footer/footer-accordion/index"
+    as footer-accordion;
+@use "@/sites/Analysis-result-search/components/footer/footer-payment/index" as
+    footer-payment;
+@use "@/sites/Analysis-result-search/components/footer/footer-app/index" as
+    footer-app;
+@use "@/sites/Analysis-result-search/components/footer/footer-social/index" as
+    footer-social;
+@use "@/sites/Analysis-result-search/components/footer/footer-bottom/index" as
+    footer-bottom;
+@use "@/sites/Analysis-result-search/components/footer/footer-logo/index" as
+    footer-logo;
+
+// MAIN
+@use "@/sites/Analysis-result-search/components/banner/banner-main/index" as
+    banner-main;
+@use "@/sites/Analysis-result-search/components/cards-links/index" as
+    cards-links;

@@ -1,0 +1,11 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+@use "@/sites/Analysis-result-search/variables" as var;
+.n-bonus {
+    background-color: color.$light-blue;
+    border-radius: 5px;
+    padding: 5px 10px;
+    gap: 6px;
+    span {
+        color: color.$blue;
+    }
+}

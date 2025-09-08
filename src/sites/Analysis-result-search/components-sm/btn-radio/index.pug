@@ -1,0 +1,7 @@
+mixin Btn-radio(param={})
+    .n-btn-radio
+        input(type="radio", name=`${param.name}`, id=`${param.radioId}`, checked=param.checked)
+        label(for=`${param.radioId}`)
+            p(class=`${param.labelClass}`)=param.label
+            if(param.price)
+                span.price=param.price

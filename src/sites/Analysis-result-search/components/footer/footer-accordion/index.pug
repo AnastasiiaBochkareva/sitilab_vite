@@ -1,0 +1,30 @@
+mixin Footer-accordion(blocks=[])
+    ul.accordion.footer__accordion
+        each block in blocks
+            li.accordion__item
+                .accordion__head
+                    .accordion__head-content
+                        .accordion__head-text=block.title
+                    .accordion__icon
+                        +Img({
+                            src: 'img/footer-arrow-down.svg',
+                            alt: 'footer-arrow-down'
+                        })
+                .accordion__body
+                    .accordion__body-content
+                        ul
+                            li.first-item=block.firstItem
+                            each item in (block.itemsCol1 || [])
+                                li
+                                    a(href='#', class= item.highlight ? 'accordion__link highlight' : 'accordion__link')= item.text || item
+                        if block.itemsCol2 && block.itemsCol2.length
+                            ul
+                                each item in block.itemsCol2
+                                    li
+                                        a(href='#', class= item.highlight ? 'accordion__link highlight' : 'accordion__link')= item.text || item
+        li.accordion__item.last-item
+            a(href="#").n-btn
+                span Результаты анализов
+            +Footer-payment({})
+            +Footer-app({})
+            +Footer-social({})

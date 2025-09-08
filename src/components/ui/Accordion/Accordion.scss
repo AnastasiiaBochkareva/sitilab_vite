@@ -1,0 +1,114 @@
+.accordion {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    max-width: 480px;
+    width: 100%;
+
+    &__item {
+        padding: 8px 0;
+        overflow: hidden;
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #f5f5f5;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &.active {
+            .accordion__body {
+                opacity: 1;
+            }
+
+            .accordion__icon {
+                svg {
+                    transform: rotate(45deg);
+                }
+            }
+
+            .accordion__head-label {
+                display: none;
+            }
+        }
+    }
+
+    &__head {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        user-select: none;
+
+        &-content {
+            padding: 8px 16px;
+            min-height: 36px;
+        }
+
+        &-text {
+            color: rgb(142, 154, 171);
+            font-size: 15px;
+            line-height: 1.47;
+            transition: color 0.2s ease-in-out;
+        }
+
+        &-label {
+            margin-top: 2px;
+            font-size: 11px;
+            line-height: 12px;
+            color: #0a3fb4;
+            display: block;
+            animation: fade-in 0.2s ease-in-out;
+        }
+
+        &:hover {
+            .accordion__head-text {
+                color: #0a3fb4;
+            }
+
+            svg {
+                fill: #c1c7d0;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        right: 16px;
+        width: 20px;
+        height: 20px;
+
+        svg {
+            fill: #f5f5f5;
+            transition: transform 0.2s ease-in-out;
+        }
+    }
+
+    &__body {
+        max-height: 0;
+        overflow: hidden;
+        will-change: max-height;
+        transition: all 0.25s ease-out;
+        opacity: 0;
+        box-sizing: content-box;
+
+        &-content {
+            font-size: 13px;
+            color: #42526e;
+            line-height: 1.54;
+            padding: 8px 16px;
+        }
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

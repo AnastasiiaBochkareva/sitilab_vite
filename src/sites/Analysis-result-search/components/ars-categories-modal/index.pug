@@ -1,0 +1,15 @@
+mixin Ars-categories-modal()
+    .ars-categories-modal(id='categories')
+        .ars-categories-modal__header
+            .ars-sidebar__title Анализы по категориям
+            button.ars-categories-modal__close
+                +Img({
+                    src: 'img/ars-close.svg',
+                    alt: 'Close Filters'
+                })
+        .ars-categories-modal__content
+            +Ars-sidebar-categories({
+                class: 'ars-categories-modal__categories'
+            })
+        .ars-categories-modal__footer
+            a(href='/').ars-categories-modal__confirm Применить

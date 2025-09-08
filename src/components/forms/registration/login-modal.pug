@@ -1,0 +1,10 @@
+mixin Login-modal()
+    div(id='login-modal' class='modal')
+        
+        .login-form(id='login-form')
+            .btn-close X
+            label(for='login-phone') Phone
+            input(type='text' id='login-phone' required)
+            label(for='login-password') Password
+            input(type='password' id='login-password' required)
+            button(type='submit' class='btn-banner' id='modal-login-btn') Login

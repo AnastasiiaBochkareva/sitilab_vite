@@ -1,0 +1,84 @@
+mixin Ars-content-card-right(param)
+    .ars-content-card__right
+        if(param.cardCode)
+            .ars-content-card__code код: 11-10-001
+        .ars-content-card__right-item
+            +Img({
+                src: 'img/ars-sale.svg',
+                alt: 'sale'
+            })
+            p 1 календарный день
+        .ars-content-card__right-item(class=param.slowClass)
+            +Img({
+                src: 'img/ars-sale.svg',
+                alt: 'sale'
+            })
+            p 1 календарный день
+            span.price +230 ₽
+        .ars-content-card__right-item(class=param.slowClass)
+            +Img({
+                src: 'img/ars-sale.svg',
+                alt: 'sale'
+            })
+            p(class=param.slowClass) 1 календарный день
+            .ars-info-img
+                +Img({
+                    src: 'img/ars-info.svg',
+                    alt: 'info',
+                    class: 'ars-info-img'
+                })
+                p.ars-info-hover Стоимость выезда на дом рассчитывается после указания адреса при оформлении заказа
+        if(param.cardCode)
+            .ars-content-card__right-item(class=param.borderClass)
+                p Цена срочного анализа: 
+                    span.price +230 ₽
+                p Взятие крови из вены:
+                    span.price +230 ₽
+        .ars-content-card__right-item
+            input(type="radio", name=`service-option-${param.radioId}`, id=`option1-${param.radioId}` checked)
+            label(for=`option1-${param.radioId}`)
+                p 1 календарный день
+                span.price +230 ₽
+        .ars-content-card__right-item
+            input(type="radio", name=`service-option-${param.radioId}`, id=`option2-${param.radioId}`)
+            label(for=`option2-${param.radioId}`)
+                p Срочно за 3-5 часов (CITO): 
+                span.price +230 ₽
+        if(param.toggle)
+            .ars-content-card__right-item(class=param.slowClass)
+                +Ars-toggle-block({
+                    noToggle: true
+                })
+        if(!param.detailsCardBottom)
+            .ars-content-card__right-item.ars-content-card__price-block
+                .ars-content-card__price 525 ₽
+                a(href='/').ars-content-card__cart
+                    +Img({
+                        src: 'img/emb-cart.svg',
+                        alt: 'Cart'
+                    })
+                +Bonuses({
+                    bonusClass: 'ars-content-card__right-item ars-content-card__bonus', 
+                    bonusText: 'от 55 бонусов'
+                })
+        else
+            .ars-content-card__right-item.ard-content-card__price-block
+                p.ard-total.item-s Итого: 
+                p.ard-total-price 2170 ₽ 
+                +Bonuses({
+                    bonusClass: 'ars-content-card__right-item ard-content-card__bonus', 
+                    bonusText: 'от 55 бонусов'
+                })
+                a(href='/').ard-content-card__cart
+                    +Img({
+                        src: 'img/emb-cart.svg',
+                        alt: 'Cart'
+                    })
+                    | В Корзину
+                
+                <a href="/files/my-document.pdf" download class="ard-download-link">
+                    +Img({
+                        src: 'img/ard-docs.svg',
+                        alt: ''
+                    })  
+                    | Скачать образец результата </a>

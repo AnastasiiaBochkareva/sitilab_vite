@@ -1,0 +1,17 @@
+mixin Ars-toggle-block(param={})
+    .ars-toggle-block
+        +Img({ src: 'img/ars-home.svg', alt: 'icon' })
+        p Выезд на дом
+        .ars-toggle-block-img
+            +Img({
+                src: 'img/ars-info.svg',
+                alt: 'info',
+                class: 'ars-info-img'
+            })
+            p.ars-toggle-block-hover Стоимость выезда на дом рассчитывается после указания адреса при оформлении заказа
+        if(!param.noToggle)
+            label.ars-toggle
+                input.ars-toggle__input(type="checkbox")
+                span.ars-toggle__custom
+                span.ars-toggle__label
+        

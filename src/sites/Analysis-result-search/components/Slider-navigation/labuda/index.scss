@@ -1,0 +1,75 @@
+.labuda-page {
+    .slider-navigation {
+        .labuda-analysis__pagination {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .swiper-pagination-bullet {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: rgba(217, 225, 233, 1);
+                display: block;
+                cursor: pointer;
+                &-active {
+                    background-color: rgba(0, 171, 223, 1);
+                }
+            }
+        }
+        &_prev {
+            transform: rotate(180deg) !important;
+        }
+        &_next {
+            transform: rotate(0deg) !important;
+        }
+        &_prev,
+        &_next {
+            padding: 0;
+            cursor: pointer;
+            width: 10px;
+            height: 18px;
+            border-radius: 100%;
+            border: none !important;
+            background-color: #fff !important;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            position: initial;
+            svg {
+                width: 11px;
+                height: 19px;
+                fill: #00b2e3 !important;
+            }
+            &.swiper-button-disabled {
+                border: none !important;
+                background-color: transparent !important;
+                svg {
+                    fill: #00b2e3 !important;
+                }
+            }
+            &:hover {
+                border: none !important;
+                background-color: transparent !important;
+                svg {
+                    fill: #00b2e3 !important;
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            border: 2px solid rgba(217, 225, 233, 1);
+            padding: 12px 20px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+
+            &_prev,
+            &_next {
+                display: flex;
+            }
+        }
+    }
+}

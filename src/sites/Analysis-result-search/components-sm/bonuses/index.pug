@@ -1,0 +1,7 @@
+mixin Bonuses(param = {})
+    div(class=param.bonusClass)
+        +Img({
+            src: 'img/ars-bonus.svg',
+            alt: 'Bonus'
+        })
+        span=param.bonusText

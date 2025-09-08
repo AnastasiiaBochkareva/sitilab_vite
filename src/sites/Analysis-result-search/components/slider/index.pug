@@ -1,0 +1,45 @@
+mixin Slider(param={})
+    div(class=param.sliderBlockClass)
+        if(param.top)
+            div(class=param.topClass)
+                p(class=param.sliderTitleClass)=param.sliderTitleText
+                if(param.isNavTop)
+                    div(class=param.sliderNavBlockClass)
+                        +Slider-navigation()
+        div(class=param.sliderContainerClass)
+            if(!param.isNavTop)
+                +Slider-navigation()
+            //- div(class=param.sliderClass)
+            .swiper-wrapper 
+                .swiper-slide
+                    +Analysis-card({
+                        codeSubtitle: 'код: 11-10-001',
+                        titleSm: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, nulla sequi. Debitis tenetur nobis consequuntur voluptatem doloremque quia iure vitae eveniet dolore saepe ut quam, odit dolor provident aliquam numquam expedita quibusdam doloribus quasi, blanditiis exercitationem repellendus. Eligendi officiis ratione ducimus nisi velit architecto, non eveniet amet corporis iure. Praesentium!',
+                        typeSubtitle: 'Биоматериал: венозная кровь',
+                        vndSubtitle: 'доступно с выездом на дом',
+                        price: '525 ₽',
+                    })
+                .swiper-slide
+                    +Analysis-card({
+                        codeSubtitle: 'код: 23-12-001',
+                        titleSm: 'Глюкоза',
+                        typeSubtitle: 'Биоматериал: плазма крови',
+                        vndSubtitle: 'доступно с выездом на дом',
+                        price: '350 ₽',
+                    })
+                .swiper-slide
+                    +Analysis-card({
+                        codeSubtitle: 'код: 23-12-001',
+                        titleSm: 'Глюкоза',
+                        typeSubtitle: 'Биоматериал: плазма крови',
+                        vndSubtitle: 'доступно с выездом на дом',
+                        price: '350 ₽',
+                    })
+                .swiper-slide
+                    +Analysis-card({
+                        codeSubtitle: 'код: 23-12-001',
+                        titleSm: 'Глюкоза',
+                        typeSubtitle: 'Биоматериал: плазма крови',
+                        vndSubtitle: 'доступно с выездом на дом',
+                        price: '350 ₽',
+                    })

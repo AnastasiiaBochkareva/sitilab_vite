@@ -1,0 +1,21 @@
+// @use "@/sites/Analysis-result-search/colors" as color;
+// @use "@/sites/Analysis-result-search/variables" as var;
+$blue: rgb(0, 171, 223);
+$blue-hover: rgb(21, 195, 250);
+$blue-back: rgb(230, 248, 253);
+
+$gray-light: rgb(217, 225, 233);
+$gray-border: rgb(178, 186, 198);
+
+$gray-text: rgb(142, 154, 171);
+
+$dark-blue: rgb(59, 75, 100);
+$light-blue: rgb(230, 248, 253);
+
+.text-blue {
+    color: rgb(0, 171, 223);
+}
+
+.n-dark-blue {
+    background: rgba(0, 140, 186, 1);
+}

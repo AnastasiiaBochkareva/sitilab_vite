@@ -1,0 +1,22 @@
+<svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45.000000" height="45.000000" fill="none">
+	<rect id="иконка врач" width="45.000000" height="45.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+	<g id="doctor">
+		<g id="Group">
+			<path id="Vector" d="M25.8053 25.1466C30.4341 23.1614 30.9166 17.1504 31.4207 13.0354C31.6932 10.8138 31.7753 8.42343 30.7043 6.38521C29.7226 4.51824 27.9207 3.22776 25.9524 2.56202C24.8718 2.19779 23.6899 2 22.4983 2C21.3067 2 20.1248 2.19779 19.0442 2.56202C17.0759 3.22776 15.2741 4.51824 14.2923 6.38521C13.2214 8.42343 13.3034 10.8162 13.5759 13.0354C14.0801 17.1504 14.5601 23.1614 19.1913 25.1466" fill-rule="nonzero" stroke="rgb(0,171,223)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+			<path id="Vector" d="M17.2092 23.832L17.2092 27.7903L8.84165 30.9791C5.44058 32.2744 3.02124 35.3305 2.53882 38.939L1.99609 43.0034" fill-rule="nonzero" stroke="rgb(0,171,223)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+			<path id="Vector" d="M27.793 23.832L27.793 27.7903L36.1606 30.9791C39.5616 32.2744 41.981 35.3305 42.4634 38.939L43.0061 43.0034" fill-rule="nonzero" stroke="rgb(0,171,223)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+			<path id="Vector" d="M16.5488 11.2562C23.1628 11.2562 24.4847 9.93438 25.148 7.94922C25.148 7.94922 25.148 11.2562 28.455 11.2562" fill-rule="nonzero" stroke="rgb(0,171,223)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+			<path id="Vector" d="M17.209 27.793C17.209 31.7609 22.5011 35.0679 22.5011 35.0679C22.5011 35.0679 27.7933 31.7609 27.7933 27.793" fill-rule="nonzero" stroke="rgb(0,171,223)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+		</g>
+		<g id="Group">
+			<g id="Group">
+				<path id="Vector" d="M15.314 28.5156C12.6679 30.5008 13.2395 33.7475 13.2395 33.7475" fill-rule="nonzero" stroke="rgb(0,171,223)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+				<path id="Vector" d="M15.8858 43.0062L17.8709 43.0062L17.8709 40.3601C17.8709 37.4511 15.8858 33.7461 13.2421 33.7461C10.596 33.7461 8.61328 37.4487 8.61328 40.3601L8.61328 43.0062L10.5984 43.0062" fill-rule="nonzero" stroke="rgb(0,171,223)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+			</g>
+			<g id="Group">
+				<path id="Vector" d="M29.5723 28.4688C31.912 29.5204 31.7649 35.0683 31.7649 35.0683L31.7649 36.3901" fill-rule="nonzero" stroke="rgb(0,171,223)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+				<path id="Vector" d="M31.764 43.0046C29.9376 43.0046 28.457 41.524 28.457 39.6976C28.457 37.8712 29.9376 36.3906 31.764 36.3906C33.5904 36.3906 35.071 37.8712 35.071 39.6976C35.071 41.524 33.5904 43.0046 31.764 43.0046Z" stroke="rgb(0,171,223)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,321 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+@use "@/sites/Analysis-result-search/variables" as var;
+
+.btn-reset {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    span {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -2%;
+        color: color.$gray-text;
+    }
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 6px;
+    }
+}
+
+.n-btn {
+    background-color: color.$blue;
+    transition: var.$transition-default;
+    border-radius: 5px;
+    padding: 9px 7px 7px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    display: block;
+    text-align: center;
+    &:hover {
+        background-color: color.$blue-hover;
+    }
+    span {
+        color: #fff;
+    }
+}
+
+.n-btn-secondary {
+    background-color: #fff;
+    transition: var.$transition-default;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    display: block;
+    text-align: center;
+    border: 1px solid rgb(0, 171, 223);
+    &:hover {
+        background-color: color.$blue-hover;
+        span {
+            color: #fff;
+        }
+    }
+    span {
+        color: rgb(0, 171, 223);
+    }
+}
+
+.n-btn-gray {
+    background-color: #fff;
+    transition: var.$transition-default;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgb(142, 154, 171);
+    &:hover {
+        background-color: rgb(142, 154, 171, 0.1);
+    }
+    span {
+        color: rgb(142, 154, 171);
+    }
+}
+
+.n-btn-red {
+    box-sizing: border-box;
+    border: 1.5px solid rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        rgba(234, 81, 109, 1),
+        rgba(255, 107, 149, 1) 100%
+    );
+    color: #fff;
+    padding: 26px 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    text-decoration: none;
+}
+
+.c-btn {
+    position: relative;
+    background: transparent;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    color: rgb(142, 154, 171);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    max-width: 200px;
+    width: 100%;
+    transition: border 0.2s ease-in-out, color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out, background 0.2s ease-in-out;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        margin-left: 20px;
+        fill: #c1c7d0;
+        transition: fill 0.2s ease-in-out;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:hover:not([disabled]) {
+        color: #0a3fb4;
+        svg {
+            fill: #0a3fb4;
+        }
+    }
+    &[disabled] {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+    // COLORS
+    // primary
+    &_primary {
+        background: rgb(0, 171, 223);
+        color: #fff;
+
+        &:hover:not([disabled]) {
+            background-color: rgb(21, 195, 250);
+            color: #fff;
+            svg {
+                stroke: #fff;
+                fill: transparent;
+            }
+        }
+
+        svg {
+            stroke: #fff;
+            fill: transparent;
+        }
+    }
+
+    // secondary
+    &_secondary {
+        background: #f4f5f7;
+        color: rgb(142, 154, 171);
+
+        &:hover:not([disabled]) {
+            background-color: mix(black, #f4f5f7, 8);
+            color: rgb(142, 154, 171);
+
+            svg {
+                fill: #051945;
+            }
+        }
+
+        svg {
+            fill: #051945;
+        }
+    }
+
+    // outline
+    &_outline {
+        color: rgb(142, 154, 171);
+        border: 1px solid rgb(178, 186, 198);
+        background-color: #fff;
+
+        &:hover:not([disabled]) {
+            color: rgb(21, 195, 250);
+        }
+    }
+
+    &_dark {
+        color: #ffffff;
+
+        &:hover:not([disabled]) {
+            color: #0a3fb4;
+        }
+    }
+
+    &_primary-dark {
+        background: #fff;
+        color: rgb(142, 154, 171);
+
+        &:hover:not([disabled]) {
+            background-color: mix(black, #fff, 12);
+            color: rgb(142, 154, 171);
+            svg {
+                fill: #051945;
+            }
+        }
+
+        svg {
+            fill: #051945;
+        }
+    }
+
+    &_secondary-dark {
+        background: #051945;
+        color: #ffffff;
+
+        &:hover:not([disabled]) {
+            background-color: mix(white, #051945, 8);
+            color: #ffffff;
+
+            svg {
+                fill: #fff;
+            }
+        }
+
+        svg {
+            fill: #fff;
+        }
+    }
+
+    &_outline-dark {
+        color: #ffffff;
+
+        &::after {
+            // border
+            content: "";
+            position: absolute;
+            inset: 0px;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            user-select: none;
+            transition: border 0.2s ease-in-out;
+        }
+
+        &:hover:not([disabled]) {
+            color: #0a3fb4;
+
+            &::after {
+                border-color: rgb(0, 171, 223);
+            }
+
+            svg {
+                fill: rgb(0, 171, 223);
+            }
+        }
+
+        svg {
+            fill: #fff;
+        }
+    }
+
+    // SIZES
+    // medium size
+    &_md {
+        padding: 8px 16px;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            margin-left: 16px;
+            margin-right: -6px;
+        }
+    }
+    &_100 {
+        width: 100%;
+
+        svg {
+            margin-left: auto;
+        }
+    }
+
+    // TYPE
+    // square
+    &_square {
+        padding: 10px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            margin: 0;
+        }
+    }
+    &_square.btn_md {
+        padding: 8px;
+        svg {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+        }
+    }
+}

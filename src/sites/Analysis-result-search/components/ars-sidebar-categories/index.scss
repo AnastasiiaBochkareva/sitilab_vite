@@ -1,0 +1,189 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+.ars-sidebar-categories {
+    &__head {
+        background-color: color.$blue;
+        border-radius: 10px 10px 0 0;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+
+        &-link {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 15px;
+            row-gap: 5px;
+            border: none;
+            background-color: transparent;
+            img {
+                display: none;
+            }
+        }
+    }
+    &.ars-sidebar-closet:not(.active) {
+        .ars-sidebar-categories {
+            &__head {
+                background-color: #fff;
+                border: 1px solid rgb(0, 171, 223);
+                border-radius: 10px;
+                display: flex;
+                position: relative;
+                &-link {
+                    color: rgb(0, 171, 223);
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                    img {
+                        display: block;
+                        transform: rotate(90deg);
+                        position: absolute;
+                        right: 17px;
+                    }
+                }
+            }
+            &__body {
+                padding: 0;
+                border: none;
+            }
+        }
+    }
+
+    &__body {
+        border-radius: 0 0 10px 10px;
+        border-left: 1px solid color.$gray-border;
+        border-right: 1px solid color.$gray-border;
+        border-bottom: 1px solid color.$gray-border;
+        padding: 10px 2px 0;
+        transition: max-height 0.3s ease;
+    }
+    &__items {
+        max-height: 470px;
+        height: 100%;
+        overflow-y: scroll;
+        padding-left: 5px;
+        padding-right: 5px;
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(178, 186, 198);
+            border-radius: 2px;
+        }
+        scrollbar-width: thin;
+        scrollbar-color: rgb(178, 186, 198) #fff;
+    }
+    &__item {
+        &:not(:last-child) {
+            border-bottom: 1px solid color.$gray-light;
+        }
+        &.active {
+            .ars-sidebar-categories__item-head {
+                background-color: color.$blue;
+                color: #fff;
+                img {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        &-head {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 7px;
+            img {
+                max-width: 12px;
+                max-height: 6px;
+                transition: transform 0.3s ease;
+            }
+        }
+
+        &-body {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease;
+            background-color: color.$blue-back;
+            ul {
+                list-style: none !important;
+                margin: 0 !important;
+                padding: 15px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 12px !important;
+                li {
+                    position: relative !important;
+                    padding: 0 0 0 20px !important;
+                    &::before {
+                        content: "" !important;
+                        width: 5px !important;
+                        height: 5px !important;
+                        background-color: color.$dark-blue !important;
+                        border-radius: 50% !important;
+                        position: absolute !important;
+                        left: 0 !important;
+                        top: 50% !important;
+                        transform: translateY(-50%) !important;
+                        display: block !important;
+                        transition: background-color 0.3s ease !important;
+                    }
+                    a {
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 22px;
+                        text-decoration: none;
+                        color: color.$dark-blue;
+                        transition: color 0.3s ease;
+                    }
+                    &:hover {
+                        a {
+                            color: color.$blue;
+                        }
+                        &::before {
+                            background-color: color.$blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        &.ars-sidebar-closet:not(.active) {
+            .ars-sidebar-categories {
+                &__head {
+                    border: none;
+                    &-link {
+                        text-align: left;
+                        margin-left: 0;
+                        img {
+                            position: initial;
+                        }
+                    }
+                }
+                &__body {
+                    padding: 0;
+                    border: none;
+                }
+            }
+        }
+        &__head {
+            background-color: transparent;
+            &-link {
+                color: color.$blue;
+                img {
+                    display: block;
+                }
+            }
+        }
+        &__body {
+            display: none;
+        }
+    }
+}

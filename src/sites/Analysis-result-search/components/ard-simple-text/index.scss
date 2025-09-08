@@ -1,0 +1,39 @@
+.ard-text-bold {
+    font-weight: 600;
+    margin: 0;
+    .ard-text {
+        display: inline;
+    }
+}
+.ard-text {
+    font-weight: 400;
+    margin: 10px 0;
+}
+.ard-text,
+.ard-text-bold {
+    font-size: 14px;
+    line-height: 22px;
+}
+.ard-text-list {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        position: relative;
+        padding: 0 0 0 20px !important;
+        &::before {
+            position: absolute;
+            display: block;
+            width: 2px !important;
+            height: 2px !important;
+            background-color: rgb(59, 75, 100) !important;
+            border-radius: 50% !important;
+            content: "";
+            left: 0 !important;
+            top: 10px !important;
+        }
+    }
+}

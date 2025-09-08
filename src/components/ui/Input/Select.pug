@@ -1,0 +1,46 @@
+// -
+    param.name - name // Если оставить пустым, будет сгенерирован Math.floor(Math.random() * 666)
+    param.id - id // Если оставить пустым, будет сгенерирован Math.floor(Math.random() * 666)
+
+mixin Select(param = {})
+
+    - param.name = param.name ? param.name : 'Placeholder'
+    - param.itemsInputName = param.itemsInputName ? param.itemsInputName : 'name-' + Math.floor(Math.random() * 666);
+    - param.itemsLabelText = param.itemsLabelText ? param.itemsLabelText : 'Вариант';
+    - param.id = Math.floor(Math.random() * 666);
+
+    .select
+      .select__input
+        +Input({placeholder: param.name, disabled: true, arrowDown: true})
+      .select__dropdown
+          if (typeof param.itemsLabelText === 'object')
+              - for (let i=0; i < param.itemsLabelText.length; i++)
+                  .select__item
+                      input(type="radio" name=param.itemsInputName id=param.id+i)
+                      label(for=param.id+i) #{param.itemsLabelText[i]} - #{i}
+          else
+              - for (let i=0; i < 10; i++)
+                  .select__item
+                      input(type="radio" name=param.itemsInputName id=param.id + i)
+                      label(for=param.id + i) #{param.itemsLabelText} - #{i + 1}
+
+// -
+    param.name - name // Если оставить пустым, будет сгенерирован Math.floor(Math.random() * 666)
+    param.id - id // Если оставить пустым, будет сгенерирован Math.floor(Math.random() * 666)
+    param.action // TODO param.action
+    param.placeholder
+
+mixin SelectSearch(param = {})
+
+    - param.name = param.name ? param.name : 'name-' + Math.floor(Math.random() * 666);
+    - param.id = Math.floor(Math.random() * 666);
+
+    .select.select_search
+        form(action=param.action || '#')
+            +Input({type: 'search', placeholder: param.placeholder})
+        .select__dropdown
+            if (!param.action)
+                - for (let x=1; x<=10; x++)
+                    .select__item
+                        input(type="radio" name=param.name+'[]' id=param.id+x)
+                        label(for=param.id+x) #{x} - Вариант

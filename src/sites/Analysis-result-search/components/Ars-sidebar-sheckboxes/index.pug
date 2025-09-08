@@ -1,0 +1,24 @@
+mixin Ars-sidebar-sheckboxes(param)
+    .ars-sidebar__checkboxes(class=param.class)
+        if(!param.noTitle)
+            .ars-checkboxes__title=param.title
+                span=param.number
+        each label in param.checkboxes
+            label.ars-checkbox
+                input.ars-checkbox__input(type="checkbox" name=label)
+                span.ars-checkbox__custom
+                span.ars-checkbox__label
+                    if typeof label === 'string'
+                        = label
+                    else
+                        - const parts = label.text.split(label.linkText)
+                        | #{parts[0]}
+                        a(href=label.linkHref target="_blank")= label.linkText
+                        | #{parts[1]}
+        if(param.button)
+            +Ars-sidebar-showmore({
+                id: 'showmore-checkboxes'
+            })
+        if(param.warning)
+            .n-title-xs.warning Поля, обязательные для заполнения
+            .n-title-xs.warning Проверьте корректность введенных вами данных

@@ -1,0 +1,76 @@
+@use "@/sites/Analysis-result-search/colors" as color;
+@use "@/sites/Analysis-result-search/variables" as var;
+.n-title-xl {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 32px;
+    // font-family: "Montserrat", sans-serif;
+    // color: rgb(59, 75, 100);
+}
+.n-title-xl-alt {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+}
+.n-title-md {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+}
+.n-title-md-alt {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+}
+.n-title-aux {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+}
+.n-title-lg {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+}
+.n-title-lg-alt {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+}
+.n-title-sm {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.n-title-sm-alt {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+.n-title-xs {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+}
+.n-title-xs-alt {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+@media (max-width: 768px) {
+    .n-title-xl {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    .n-title-md {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .n-title-lg {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}

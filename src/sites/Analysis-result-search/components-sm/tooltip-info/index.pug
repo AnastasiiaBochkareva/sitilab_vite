@@ -1,0 +1,7 @@
+mixin Tooltip-info(param={})
+    .tooltip-info
+        +Img({
+            src: 'img/ars-info.svg',
+            alt: 'info'
+        })
+        p.tooltip-info__hover=param.tooltipText

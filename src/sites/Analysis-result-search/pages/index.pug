@@ -1,0 +1,36 @@
+extends /sites/Analysis-result-search/layouts/base.pug
+
+block variables
+    - const title = ''
+    - const description = ''
+
+block content
+  a(href='details.html') DETAILS--
+  a(href='cart-page.html') CART--
+  a(href='order-page.html') ORDER--
+  a(href='reviews.html') REVIEWS--
+  a(href='labuda.html') LABUDA--
+  a(href='footer.html') FOOTER--
+  a(href='main.html') MAIN--
+  .analysis-result-search
+    .ars-sidebar-block
+      .ars-sidebar__header
+        .ars-sidebar__title Фильтры
+        a(href='/').ars-sidebar__link.text-blue Сбросить все
+        button.ars-sidebar__button(id='toggle-filters')
+          +Img({
+            src: 'img/ars-filter.svg',
+            alt: 'Filter button'
+          })
+      +Ars-sidebar()
+    .analysis-result-content
+      +Ars-content-top()
+    +Ars-filters-modal()
+    +Ars-categories-modal()
+    +Modal-cheaper({
+      embCode: 'код: 11-10-001',
+      headTitle: 'Общий анализ крови (CBC/Diff - 5 фракций лейкоцитов)',
+      price: '525 ₽',
+      bodyTitle: 'Дешевле в составе Чекапа'
+    })
+

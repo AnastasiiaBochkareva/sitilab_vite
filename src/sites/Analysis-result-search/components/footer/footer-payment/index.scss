@@ -1,0 +1,35 @@
+.footer-new {
+    .footer__payment {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        &_title {
+            color: rgba(255, 255, 255, 1);
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 35px;
+            letter-spacing: 0%;
+            text-align: left;
+        }
+        &_categories {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            img {
+                max-width: 48px;
+                max-height: 28px;
+            }
+        }
+        @media (max-width: 1220px) {
+            margin-top: 20px;
+            &_title {
+                display: none;
+            }
+            &_categories {
+                justify-content: center;
+            }
+        }
+    }
+}

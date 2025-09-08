@@ -1,0 +1,7 @@
+mixin Simple-text(param = {})
+    - param.customClass = param.customClass ? param.customClass : ''
+    p.emb-text(class=`${param.customClass}`)!=param.text
+        if(param.img)
+            +Img({
+                src: `img/${param.imgName}`
+            })

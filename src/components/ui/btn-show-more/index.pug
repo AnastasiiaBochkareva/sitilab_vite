@@ -1,0 +1,3 @@
+mixin Btn-show-more(param)
+    - param.class = param.class ? param.class : ' '
+    button.btn.btn-show-more(class=param.class)=param.text

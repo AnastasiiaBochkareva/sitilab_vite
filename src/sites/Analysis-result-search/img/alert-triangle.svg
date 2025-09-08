@@ -1,0 +1,14 @@
+<svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip8267_11389">
+			<rect id="alert-triangle" width="20.000000" height="20.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="alert-triangle" width="20.000000" height="20.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip8267_11389)">
+		<path id="Icon" d="M10 7.5L10 10.83M10 14.16L10 14.16M1.99 15.08C1.61 15.73 1.42 16.06 1.45 16.33C1.47 16.57 1.59 16.78 1.78 16.92C2 17.08 2.38 17.08 3.14 17.08L16.85 17.08C17.61 17.08 17.99 17.08 18.21 16.92C18.4 16.78 18.52 16.57 18.55 16.33C18.57 16.06 18.38 15.73 18 15.08L11.15 3.24C10.77 2.58 10.58 2.26 10.33 2.14C10.12 2.05 9.87 2.05 9.66 2.14C9.41 2.26 9.22 2.58 8.84 3.24L1.99 15.08Z" stroke="#FFCC00" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+	</g>
+</svg>

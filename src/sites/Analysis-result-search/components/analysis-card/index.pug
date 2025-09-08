@@ -1,0 +1,40 @@
+mixin Analysis-card(param={})
+  .a-card
+    if(!param.cardRow)
+
+      .a-card__top
+        a(href="#").emb-code.a-card-code=param.codeSubtitle
+        a(href="#").n-title-lg-alt=param.titleSm
+
+      .a-card__bottom
+        .n-title-xs-alt=param.typeSubtitle 
+        .n-title-xs-alt
+          //- +icon('a-home')
+          +Img({
+            src: 'img/ars-home.svg',
+            alt: ''
+          })
+          span.text-blue=param.vndSubtitle
+        div.a-card__btn 
+          div.n-title-lg.text-blue=param.price 
+          div.a-btn-basket
+            //- +icon('a-basket')
+            +Img({
+              src: 'img/emb-cart.svg',
+              alt: ''
+            })
+            span.n-title-xs-alt В корзину
+
+    else  
+      .a-card__type
+        a(href="#").a-title-sm=param.titleSm
+        a(href="#").a-subtitle.a-card-code=param.codeSubtitle
+        .a-subtitle=param.typeSubtitle 
+        .a-subtitle
+          //- +icon('a-home')
+          span.text-blue=param.vndSubtitle
+      .a-card__btn 
+        .a-title-sm=param.price 
+        a(href="#").a-btn-basket
+          //- +icon('a-basket')
+          span.a-subtitle В корзину

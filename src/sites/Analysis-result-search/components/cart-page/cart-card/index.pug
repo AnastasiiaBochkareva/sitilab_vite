@@ -1,0 +1,48 @@
+mixin Cart-card(param={}) 
+    .cart-card(class=param.addClass)
+        .cart-card__title
+            +Code({
+                embCode: `${param.code}`
+            })
+            .n-title-lg=param.title
+
+        .cart-card__leadtime
+            if(param.leadTime)
+                .cart-card__tooltip.n-flex-align-center
+                    p.n-title-sm Сроки готовности:
+                    +Tooltip-info({
+                        tooltipText: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur facere numquam excepturi voluptate. Voluptas inventore perferendis sequi consequatur nostrum consectetur, amet, asperiores id optio corrupti, distinctio dolores architecto temporibus exercitationem quod dolore voluptate voluptatem nam saepe dicta.'
+                    })
+                +Btn-radio({
+                    radioId: `leadtime-${param.radioId}`,
+                    name: 'leadtime',
+                    label: '1 календарный день',
+                    labelClass: 'n-title-xs',
+                    name: `leadtime-${param.name}`,
+                    checked: true
+                })
+                +Btn-radio({
+                    radioId: `leadtime-${param.radioIdTwo}`,
+                    name: 'leadtime',
+                    label: 'Срочно за 3-5 ч',
+                    labelClass: 'n-title-xs',
+                    name: `leadtime-${param.name}`
+                })
+
+        .cart-card__price
+            p.n-title-sm Цена:
+            p.n-title-lg=param.price
+
+    
+        button.cart-card__clean
+            if(param.cartCardClean)
+                +Img({
+                    src: 'img/ars-close.svg',
+                    alt: 'Закрыть',
+                    class: 'cart-card__clean-ars-close'
+                })
+                +Img({
+                    src: 'img/trash.svg',
+                    alt: 'Закрыть',
+                    class: 'cart-card__clean-trash'
+                })

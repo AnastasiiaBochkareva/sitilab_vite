@@ -1,0 +1,8 @@
+mixin Link(param)
+    - param.class = param.class ? param.class : ''
+    - param.href = param.href ? param.href : ''
+    - param.text = param.text ? param.text : ''
+    if(param.href && param.text)
+        a(href=`${param.href}` class=`${param.class}`)=param.text
+    else
+        p Здесь должна быть ссылка!!!

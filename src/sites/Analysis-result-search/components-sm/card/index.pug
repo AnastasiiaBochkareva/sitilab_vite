@@ -1,0 +1,91 @@
+mixin Card(param={})
+    .emb-card(class=param.classSaleCard)
+        if(param.saleCard)
+            .emb-card__head
+                +Code({
+                    embCode: 'код: 80-66-007'
+                })
+                +Title18({
+                    title18: `${param.saleCardTitle}`
+                })
+            .emb-card__bottom
+                +Simple-text({
+                    text: `${param.saleCardText}`
+                })
+                .n-flex-jc-sb
+                    .emb-card__price
+                        .n-price__new
+                            +Img({
+                                src: 'img/n-fire.jpg',
+                                alt: 'fire'
+                            })
+                            
+                            p=param.newPrice
+                        .n-price
+                            p=param.oldPrice
+                .n-flex-col-center
+                    +Simple-text({
+                        text: 'промокод'
+                    })
+                    .n-promocode ЧИСТОТА
+            if(param.discount)
+                .n-discount=param.discountText
+                    span=param.discountTextSpan
+        
+        else
+            if(!param.noCodeBlock)
+                +Code({
+                    embCode: 'код: 00-00-000'
+                })  
+            if(!param.newText)
+                +Title18({
+                    title18: `Чекап биохимический «Функции почек» `
+                })
+            if(param.addNewText)
+                +Title18({
+                    title18: `${param.addNewTextBlock}`
+                })
+            if(!param.noBloodBlock)
+                +Simple-text({
+                    text: 'Биоматериал: венозная кровь'
+                })
+            if(!param.noAddText)
+                +Simple-text({
+                    text: 'Биоматериал: венозная кровь',
+                    img: true,
+                    imgName: 'emb-house.svg',
+                    customClass: 'text-blue text-d-block'
+                })
+            if(param.addText)
+                .emb-text-add=param.addTextBlock
+            if(!param.noPromoBottom)
+                .emb-card__bottom
+                    +Price({
+                        text: '2520 ₽'
+                    })
+                    +Btn-cart({})
+            if(param.promoBottom)
+                .emb-card__promo
+                    .n-flex-jc-sb
+                        .emb-card__price
+                            .n-price__new
+                                +Img({
+                                    src: 'img/n-fire.jpg',
+                                    alt: 'fire'
+                                })
+                                
+                                p=param.newPrice
+                            .n-price
+                                p=param.oldPrice
+                    .n-flex-col-center
+                        +Simple-text({
+                            text: 'промокод'
+                        })
+                        .n-promocode ЧИСТОТА
+            if(param.clarifyBlock)
+                .emb-card__bottom
+                    .n-clarify Уточнить, есть ли услуга в медцентрах вашего города, можно по телефону:
+                        a(href="tel:8-800-100-36-30") 8-800-100-36-30
+                        | или в чате на сайте
+            if(param.number)
+                .emb-number=param.number

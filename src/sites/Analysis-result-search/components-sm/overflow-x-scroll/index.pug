@@ -1,0 +1,12 @@
+mixin Order-tab-two-slider(param={})
+    div.order-tab-two__slider
+        .swiper-wrapper
+            each el in param.items
+                .swiper-slide
+                    button(class=el.activeClass)
+                        if(el.img)
+                            +Img({
+                                src: `img/${el.imgSrc}`,
+                                alt: `${el.alt}`
+                            })
+                        p(class=el.textClass)=el.text

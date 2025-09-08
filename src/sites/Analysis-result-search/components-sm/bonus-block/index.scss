@@ -1,0 +1,25 @@
+.n-bonus-block {
+    background: linear-gradient(rgb(0, 171, 223), rgb(2, 145, 188));
+    border-radius: 10px;
+    padding: 30px;
+    color: #fff;
+    .n-custom {
+        border-bottom: 1px dotted #fff;
+        padding-bottom: 20px;
+        margin-bottom: 15px;
+        span {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 32px;
+        }
+    }
+    .n-title-xs,
+    .n-title-xs-alt {
+        svg {
+            margin-right: 8px;
+        }
+    }
+    .n-title-xs-alt {
+        display: flex;
+    }
+}

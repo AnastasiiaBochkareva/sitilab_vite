@@ -1,0 +1,12 @@
+mixin Ars-sidebar-popular()
+    - const links = ['Комплексные исследования', 'Гормоны', 'Витамины и минералы', 'Инфекции', 'Онкомаркеры', 'Витамины и минералы', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem sequi consequatur tempora nemo vitae, perferendis et a. Aliquid, dicta debitis.', '1', '2', '3', '4', '5']
+    .ars-sidebar-popular
+        .ars-sidebar-popular__title Часто ищут
+        ul
+            each link in links
+                li
+                    a(href='/').ars-sidebar-popular__link=link
+                    span 15 
+        +Ars-sidebar-showmore({
+            id: 'showmore-popular'
+        })

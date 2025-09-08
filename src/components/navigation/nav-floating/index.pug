@@ -1,0 +1,10 @@
+mixin Nav-floating(items=[])
+    nav.nav-floating
+        ul
+            each item in items
+                li
+                    a(href=item.href class=item.class)
+                        +Img({
+                            src: `img/${item.img}.svg`,
+                            alt: item.alt
+                        })

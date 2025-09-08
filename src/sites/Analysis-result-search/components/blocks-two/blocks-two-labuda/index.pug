@@ -1,0 +1,149 @@
+mixin Blocks-two-labuda(param={})
+    .n-block-two(class=param.addBlockTwoClass)
+        if(param.labubuSaleBlockBlue)
+            .n-inner-container(class=param.saleClass)
+                div(class=param.wrapperClass)
+                    .n-title-xl-alt Во всех медицинских центрах Ситилаб 
+                        span СКИДКИ!
+                    +Card({
+                        classSaleCard: 'emb-card__sale',
+                        saleCard: true,
+                        saleCardTitle: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit vel mollitia nesciunt explicabo, minima, vitae rem at architecto modi cupiditate consequatur placeat error, nostrum sint sequi autem sed sit.',
+                        saleCardText: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit vel mollitia nesciunt explicabo, minima, vitae rem at architecto modi cupiditate consequatur placeat error, nostrum sint sequi autem sed sit.',
+                        discount: true,
+                        discountText: '-15',
+                        discountTextSpan: '%',
+                        oldPrice: '999999 ₽',
+                        newPrice: '999999 ₽',
+                    })
+                    +Card({
+                        classSaleCard: 'emb-card__sale',
+                        saleCard: true,
+                        saleCardTitle: 'Энтеробиоз',
+                        saleCardText: 'Комплекс анализов для <span class="highlight">медкарты 026/Y-2000</span> в школу и детсад',
+                        discount: true,
+                        discountText: '-30',
+                        discountTextSpan: '%',
+                        oldPrice: '999 ₽',
+                        newPrice: '999',
+                    })
+                    if(param.altText)
+                        .n-title-xs-alt Активировать промокоды можно во всех медцентрах Ситилаб
+                    if(param.valid)
+                        .n-valid 
+                            .n-valid-text с 1 августа по 30 сентября
+                            .n-valid-bg
+
+        if(param.labudaSaleBlockGray)
+            .n-inner-container(class=param.saleClass)
+                
+                div(class=param.wrapperClass)
+                    .emb-card__choosing
+                        .emb-card__choosing-top
+                            .n-title-lg-alt Арифметика проста:
+                                .n-img-block
+                                    +Img({
+                                        src: 'img/n-img-3.png',
+                                        alt: 'n-img-3',
+                                        class: 'n-img-one'
+                                    })
+                                    //- p.n-title-xs Вместе дешевле!
+                                    +Img({
+                                        src: 'img/n-img-4.png',
+                                        alt: 'n-img-4',
+                                        class: 'n-img-two'
+                                    })
+                                    +Img({
+                                        src: 'img/n-img-5.png',
+                                        alt: 'n-img-5',
+                                        class: 'n-img-three'
+                                    })
+                                +Img({
+                                    src: 'img/n-img-5.png',
+                                    alt: 'n-img-5',
+                                    class: 'n-img-three'
+                                })
+                            +Img({
+                                src: 'img/n-math-1.png',
+                                alt: 'n-math-1',
+                                class: 'n-math-one'
+                            })
+                            
+                        .emb-card__choosing-body
+                            .emb-card__row Цена за анализы по отдельности: 
+                                span 2551 ₽
+                            .emb-card__row.active Цена за весь набор по акции: 
+                                span 1841 ₽
+                        .emb-card__choosing-bottom
+                            .n-img-block
+                                //- +Img({
+                                //-     src: 'img/n-img-1.png',
+                                //-     alt: 'n-img-1',
+                                //-     class: 'n-img-one'
+                                //- })
+                                p.n-title-xs Ваша выгода 
+                                    span 000000 
+                                    | рyб.
+                                +Img({
+                                    src: 'img/n-img-2.png',
+                                    alt: 'n-img-2',
+                                    class: 'n-img-two'
+                                })
+                            +Img({
+                                src: 'img/n-math-2.png',
+                                alt: 'n-math-2',
+                                class: 'n-math-two'
+                            })
+
+                    +Card({
+                        classSaleCard: 'emb-card__sale',
+                        saleCard: true,
+                        saleCardTitle: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit vel mollitia nesciunt explicabo, minima, vitae rem at architecto modi cupiditate consequatur placeat error, nostrum sint sequi autem sed sit.',
+                        saleCardText: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit vel mollitia nesciunt explicabo, minima, vitae rem at architecto modi cupiditate consequatur placeat error, nostrum sint sequi autem sed sit.',
+                        discount: true,
+                        discountText: '-15',
+                        discountTextSpan: '%',
+                        oldPrice: '999999 ₽',
+                        newPrice: '999999 ₽',
+                    })
+                    if(param.altTextCard)
+                        .n-title-xs-alt Активировать промокоды можно во всех медцентрах Ситилаб
+                    
+        if(param.labubuOne)
+            .n-inner-container.n-flex-jc-sb(class=param.addLabubuClass)
+                .n-col-info(class=param.addInnerLabubuClass)
+                    if(param.title)
+                        .n-title-md=param.titleText
+                    +Img({
+                        src: 'img/n-frame.svg',
+                        alt: 'Рамка',
+                        class: 'n-frame-desk'
+                    })
+                    +Img({
+                        src: `img/n-frame-mob-${param.mobFrame}.svg`,
+                        alt: 'Рамка',
+                        class: 'n-frame-mob'
+                    })
+                    +Img({
+                        src: 'img/n-clip.png',
+                        alt: 'Скрепка',
+                        class: 'n-clip'
+                    })
+                    .n-bg
+                    p.n-title-lg!=param.labubuText
+                .n-col-img.n-col-img__one
+                    +Img({
+                        src: `img/${param.labubuDeskImg}.png`,
+                        alt: 'Анализы для справки',
+                        class: 'desktop-img'
+                    })
+                    +Img({
+                        src: `img/${param.labubuMobImg}.png`,
+                        alt: 'Анализы для справки',
+                        class: 'mobile-img'
+                    })
+                //- .n-bg-mob-img
+                //-     +Img({
+                //-         src: 'img/n-cells.png',
+                //-         alt: 'Клетки'
+                //-     })
