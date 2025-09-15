@@ -251,7 +251,7 @@ document.addEventListener("createSlider", (event) => {
     createSlider(element, navBlock);
 });
 
-const mainBannerElement = document.querySelector(".main-banner__slider");
+const mainBannerElement = document.querySelector(".new-banner__slider");
 if (mainBannerElement) {
     const mainBannerSlider = new Swiper(mainBannerElement, {
         modules: [Pagination, Navigation, Autoplay],
@@ -263,6 +263,7 @@ if (mainBannerElement) {
         pagination: {
             el: ".main-banner-pagination",
             type: "bullets",
+            clickable: true,
         },
         navigation: {
             prevEl: ".slider-navigation_prev",
@@ -270,13 +271,15 @@ if (mainBannerElement) {
         },
         noSwiping: true,
         grabCursor: true,
-        slideToClickedSlide: true,
+        slideToClickedSlide: false,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
         },
         loop: true,
         speed: 1000,
+        centeredSlides: true,
+        centeredSlides: false,
         breakpoints: {
             300: {
                 slidesPerView: 1,

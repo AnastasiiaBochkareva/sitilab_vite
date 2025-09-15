@@ -12,3 +12,14 @@
         }
     }
 }
+
+.main-analysis-slider {
+    .a-sale__cards {
+        .slider-navigation {
+            &_next svg,
+            &_prev svg {
+                transform: rotate(270deg) !important;
+            }
+        }
+    }
+}
