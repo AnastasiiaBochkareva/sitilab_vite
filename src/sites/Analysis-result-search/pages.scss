@@ -907,6 +907,11 @@
                     color: rgba(99, 99, 99, 0.6);
                 }
             }
+            &.error {
+                input {
+                    border-color: red;
+                }
+            }
         }
     }
 
