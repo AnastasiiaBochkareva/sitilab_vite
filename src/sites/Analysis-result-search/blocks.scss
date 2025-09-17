@@ -241,3 +241,19 @@
     display: flex;
     flex-direction: column;
 }
+.card-links {
+    .card-link {
+        &__img {
+            img {
+                transition: transform 0.3s ease;
+            }
+        }
+        &:hover {
+            .card-link__img {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
