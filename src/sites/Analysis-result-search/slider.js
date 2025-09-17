@@ -253,7 +253,7 @@ document.addEventListener("createSlider", (event) => {
 
 const mainBannerElement = document.querySelector(".new-banner__slider");
 if (mainBannerElement) {
-    const mainBannerSlider = new Swiper(mainBannerElement, {
+    const newMainBannerSlider = new Swiper(mainBannerElement, {
         modules: [Pagination, Navigation, Autoplay],
         slidesPerView: 1,
         spaceBetween: 20,
@@ -269,26 +269,33 @@ if (mainBannerElement) {
             prevEl: ".slider-navigation_prev",
             nextEl: ".slider-navigation_next",
         },
-        noSwiping: true,
+        noSwiping: false,
         grabCursor: true,
         slideToClickedSlide: false,
         autoplay: {
-            delay: 5000,
+            delay: 3000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
         },
         loop: true,
-        speed: 1000,
-        centeredSlides: true,
-        centeredSlides: false,
+        speed: 400,
         breakpoints: {
             300: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            1024: {
                 slidesPerView: 1,
                 spaceBetween: 20,
             },
         },
     });
 
-    objectSliders.push(mainBannerSlider);
+    objectSliders.push(newMainBannerSlider);
 }
 
 // Пример диспатча exent для созадния слайдера
