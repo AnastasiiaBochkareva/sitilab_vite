@@ -281,6 +281,50 @@ function setupModalEventListeners() {
     }
 }
 
+// bullet-out в пагинацию на главной
+function initPaginationCircles() {
+    try {
+        const pagination = document.querySelector(".main-banner-pagination");
+        if (!pagination) return;
+
+        const bullets = pagination.querySelectorAll("span");
+        if (!bullets || !bullets.length) return;
+
+        bullets.forEach((bullet) => {
+            if (!bullet) return;
+            try {
+                const circleOut = document.createElement("div");
+                circleOut.classList.add("bullet-out");
+
+                const circle = document.createElement("div");
+                circle.classList.add("bullet-circle");
+
+                const holdLeft = document.createElement("span");
+                holdLeft.classList.add("bullet-hold", "left");
+                const fillLeft = document.createElement("span");
+                fillLeft.classList.add("bullet-fill");
+                holdLeft.appendChild(fillLeft);
+
+                const holdRight = document.createElement("span");
+                holdRight.classList.add("bullet-hold", "right");
+                const fillRight = document.createElement("span");
+                fillRight.classList.add("bullet-fill");
+                holdRight.appendChild(fillRight);
+
+                circle.appendChild(holdLeft);
+                circle.appendChild(holdRight);
+                circleOut.appendChild(circle);
+
+                bullet.appendChild(circleOut);
+            } catch (err) {
+                console.error("Ошибка bullet-out", bullet, err);
+            }
+        });
+    } catch (err) {
+        console.error("Ошибка при обработке пагинации:", err);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const categories = document.querySelectorAll<HTMLElement>(
         ".ars-sidebar-closet"
@@ -310,4 +354,5 @@ document.addEventListener("DOMContentLoaded", () => {
         visibleCount: 7,
     });
     setupModalEventListeners();
+    initPaginationCircles();
 });
