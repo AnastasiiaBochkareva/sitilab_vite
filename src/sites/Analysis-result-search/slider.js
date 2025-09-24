@@ -273,9 +273,9 @@ if (mainBannerElement) {
         grabCursor: true,
         slideToClickedSlide: false,
         autoplay: {
-            delay: 3000,
+            delay: 4000,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true,
+            pauseOnMouseEnter: false,
         },
         loop: true,
         speed: 400,
