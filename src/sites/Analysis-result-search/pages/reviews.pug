@@ -3,6 +3,7 @@ extends /sites/Analysis-result-search/layouts/base.pug
 block variables
     - const title = ''
     - const description = ''
+    - const letters = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'.split('');
 
 block content
     .reviews-block 
@@ -27,11 +28,13 @@ block content
                                     class: 'list-close'
                                 })
                     ul.address__list
-                        li.n-title-xs(data-address="Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iste cum laboriosam laudantium esse enim in, officia incidunt iusto nihil.") Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iste cum laboriosam laudantium esse enim in, officia incidunt iusto nihil.
-                        each el in Array(19)
-                            li.n-title-xs(data-address="ул. Ленина, 1") ул. Ленина, 1
-                        each el in Array(19)
-                            li.n-title-xs(data-address="ул. Арбузная, 11") ул. Арбузная, 11
+                        li.n-title-xs(data-address="Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iste cum laboriosam laudantium esse enim in, officia incidunt iusto nihil." data-id="0") Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iste cum laboriosam laudantium esse enim in, officia incidunt iusto nihil.
+                        //- each el in Array(19)
+                        //-     li.n-title-xs(data-address="ул. Ленина, 1" data-id=`${}`) ул. Ленина, 1
+                        each el, i in Array(19)
+                            - const letter = letters[i % letters.length];
+                            - const street = `ул. ${letter.toUpperCase()}-образная, ${i + 1}`;
+                            li.n-title-xs( data-address=street data-id=`${i + 1}` )= street
                         
                 .rating
                     input(type="hidden" name="rating" id="rating-input" value=0)

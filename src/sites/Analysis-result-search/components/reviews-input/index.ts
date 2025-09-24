@@ -24,28 +24,22 @@ function initAddressSelector() {
             iconClose.style.display = "none";
         }
     }
-    toggleBtn.addEventListener("click", () => {
-        if (input.value.trim() !== "") {
-            clearSelection();
-            updateIcons();
-        } else {
-            input.focus();
-            openList();
-        }
-    });
 
     function openList() {
         wrapper.dataset.open = "true";
+        list.style.display = "block";
         updateIcons();
     }
 
     function closeList() {
         wrapper.dataset.open = "false";
+        list.style.display = "none";
         updateIcons();
     }
 
-    function selectAddress(address: string) {
+    function selectAddress(address: string, id: string) {
         input.value = address;
+        input.setAttribute("data-id", id);
         wrapper.dataset.selected = "true";
         closeList();
         toggleRatingVisibility(true);
@@ -53,6 +47,7 @@ function initAddressSelector() {
 
     function clearSelection() {
         input.value = "";
+        input.removeAttribute("data-id");
         delete wrapper.dataset.selected;
         closeList();
         toggleRatingVisibility(false);
@@ -62,6 +57,13 @@ function initAddressSelector() {
         if (!ratingBlock) return;
         ratingBlock.classList.toggle("active", show);
     }
+
+    input.addEventListener("focus", () => {
+        openList();
+    });
+    input.addEventListener("click", () => {
+        openList();
+    });
 
     input.addEventListener("input", () => {
         const query = input.value.toLowerCase().trim();
@@ -89,8 +91,9 @@ function initAddressSelector() {
         li.addEventListener("click", (e) => {
             e.stopPropagation();
             const address = li.getAttribute("data-address");
-            if (address) {
-                selectAddress(address);
+            const id = li.getAttribute("data-id");
+            if (address && id) {
+                selectAddress(address, id);
             }
         });
     });
@@ -105,7 +108,7 @@ function initAddressSelector() {
     });
 
     toggleBtn.addEventListener("click", () => {
-        if (wrapper.dataset.open === "true") {
+        if (input.value.trim() !== "") {
             clearSelection();
         } else {
             input.focus();
