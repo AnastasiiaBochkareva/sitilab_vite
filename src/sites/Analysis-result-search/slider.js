@@ -67,6 +67,7 @@ if (saleCards) {
     });
 }
 
+// copied
 const sliderWrapper = document.querySelector(".cart-order__slider");
 if (sliderWrapper) {
     const cartOrderSlider = sliderWrapper.querySelector(
